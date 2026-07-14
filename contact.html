@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Portivio" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Contact DK Studio - Get in touch" />
+  <title>Contact Us - DK Studio</title>
+  <link href="images/favicon.ico" rel="icon" sizes="any" />
+  <link href="images/favicon.png" rel="icon" type="image/png" sizes="128x128" />
+  <link href="images/favicon.png" rel="shortcut icon" type="image/png" />
+  <!-- Icon Fonts -->
+  <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.css" />
+  <!-- Iconify (for brand/social icons) -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <!-- Shared header / footer / mobile-nav components -->
+  <script src="assets/js/components.js"></script>
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <!-- Contact page styles -->
+  <link rel="stylesheet" href="assets/css/contact.css" />
+</head>
+
+<body class="layout-dark-mood">
+  <!-- Preloader Start -->
+  <section>
+    <div id="preloader">
+      <div id="ctn-preloader" class="ctn-preloader">
+        <div class="animation-preloader">
+          <div class="spinner"></div>
+          <div class="txt-loading">
+            <span data-text-preloader="D" class="letters-loading">D</span>
+            <span data-text-preloader="H" class="letters-loading">H</span>
+            <span data-text-preloader="R" class="letters-loading">R</span>
+            <span data-text-preloader="U" class="letters-loading">U</span>
+            <span data-text-preloader="V" class="letters-loading">V</span>
+            <span data-text-preloader="I" class="letters-loading">I</span>
+            <span data-text-preloader="N" class="letters-loading">N</span>
+          </div>
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+      </div>
+    </div>
+  </section>
+  <!-- Preloader End -->
+  <!-- Header (shared component) -->
+  <div id="site-header"></div>
+  <script>document.getElementById('site-header').innerHTML = renderHeader();</script>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- Contact Section Start -->
+      <section class="contact-page">
+        <div class="container">
+          <div class="row justify-content-between align-items-center">
+
+            <!-- Left: intro + info cards -->
+            <div class="col-xl-5 col-lg-6 col-md-12 mrb-md-50">
+              <span class="c-badge">Contact Us</span>
+              <h2 class="c-heading">Let's start a<span class="grad">Conversation</span></h2>
+              <p class="c-lead">Question, feedback, partnership idea, or just want to say hi? Drop us a line — a real
+                human reads every message and we usually reply within a day.</p>
+
+              <div class="c-info-cards">
+                <a class="c-card" href="tel:+919157638051">
+                  <span class="c-card-icon"><iconify-icon icon="mdi:phone-outline"></iconify-icon></span>
+                  <span>
+                    <span class="c-card-label">Call Us</span>
+                    <span class="c-card-value">+91 91576 38051</span>
+                  </span>
+                  <i class="c-card-arrow fas fa-arrow-up icon-up-right"></i>
+                </a>
+
+                <a class="c-card" href="mailto:dkstudio370@gmail.com">
+                  <span class="c-card-icon"><iconify-icon icon="mdi:email-outline"></iconify-icon></span>
+                  <span>
+                    <span class="c-card-label">Email Us</span>
+                    <span class="c-card-value">dkstudio370@gmail.com</span>
+                  </span>
+                  <i class="c-card-arrow fas fa-arrow-up icon-up-right"></i>
+                </a>
+
+                <div class="c-card">
+                  <span class="c-card-icon"><iconify-icon icon="mdi:map-marker-outline"></iconify-icon></span>
+                  <span>
+                    <span class="c-card-label">Visit Us</span>
+                    <span class="c-card-value">Ahmedabad, India</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: form panel -->
+            <div class="col-xl-6 col-lg-6 col-md-12">
+              <div class="c-form-panel">
+                <h3>Send us a message</h3>
+                <p class="c-form-sub">We'd love to hear what's on your mind.</p>
+
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                  <!-- Web3Forms access key -->
+                  <input type="hidden" name="access_key" value="ead0207d-e375-4953-8c39-c665b28de9d9" />
+                  <input type="hidden" name="from_name" value="DK Studio Website" />
+                  <!-- honeypot spam trap (must stay empty) -->
+                  <input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1"
+                    autocomplete="off" />
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="c-field">
+                        <label for="cf-name">Your name <span class="req">*</span></label>
+                        <input class="form-field" id="cf-name" type="text" name="name" placeholder="Jane Doe"
+                          required />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="c-field">
+                        <label for="cf-email">Email address <span class="req">*</span></label>
+                        <input class="form-field" id="cf-email" type="email" name="email" placeholder="jane@example.com"
+                          required />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="c-field">
+                        <label for="cf-phone">Contact no. <span class="req">*</span></label>
+                        <input class="form-field" id="cf-phone" type="tel" name="phone" placeholder="+91 90000 00000"
+                          required />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="c-field">
+                        <label for="cf-subject">Subject <span class="opt">(optional)</span></label>
+                        <input class="form-field" id="cf-subject" type="text" name="subject"
+                          placeholder="What's this about?" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="c-field">
+                    <label for="cf-message">Your message <span class="req">*</span></label>
+                    <textarea class="form-field" id="cf-message" name="message"
+                      placeholder="Tell us what's on your mind..." required></textarea>
+                  </div>
+                  <button class="c-submit" type="submit">Send Message</button>
+                  <p id="formResult" class="c-form-result" role="status"></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section End -->
+
+      <!-- Footer (shared component) -->
+      <div id="site-footer"></div>
+      <script>document.getElementById('site-footer').innerHTML = renderFooter();</script>
+    </div>
+  </div>
+
+  <!-- Mobile nav + back-to-top (shared component) -->
+  <div id="site-extras"></div>
+  <script>document.getElementById('site-extras').innerHTML = renderExtras();</script>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.appear.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/swiper.min.js"></script>
+  <script src="assets/js/gsap-plugins.js"></script>
+  <script src="assets/js/gsap-trigger.js"></script>
+  <script src="assets/js/title-animations.js"></script>
+  <script src="assets/js/backtotop.js"></script>
+  <script src="assets/js/trigger.js"></script>
+
+  <!-- Web3Forms AJAX submit -->
+  <script>
+    (function () {
+      var form = document.getElementById("contactForm");
+      if (!form) return;
+      var result = document.getElementById("formResult");
+      var btn = form.querySelector(".c-submit");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var data = Object.fromEntries(new FormData(form));
+        if (!data.subject) data.subject = "New enquiry from DK Studio website";
+
+        result.className = "c-form-result";
+        result.textContent = "Sending...";
+        btn.disabled = true;
+
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(data)
+        })
+          .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
+          .then(function (r) {
+            if (r.ok && r.json.success) {
+              result.classList.add("is-success");
+              result.textContent = "Thanks! Your message has been sent — we'll reply soon.";
+              form.reset();
+            } else {
+              result.classList.add("is-error");
+              result.textContent = r.json.message || "Something went wrong. Please try again.";
+            }
+          })
+          .catch(function () {
+            result.classList.add("is-error");
+            result.textContent = "Network error. Please check your connection and try again.";
+          })
+          .finally(function () {
+            btn.disabled = false;
+            // clear the message after a while
+            setTimeout(function () { result.textContent = ""; result.className = "c-form-result"; }, 6000);
+          });
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+/* =========================================================
+   Contact page styles
+   Used by: contact.html
+   Re-theme the design from the 3 accent vars in .contact-page
+   ========================================================= */
+
+/* ---- shared header / footer bits (same as index.html) ---- */
+
+/* diagonal up-right arrow built from FontAwesome's up arrow */
+.icon-up-right {
+  transform: rotate(45deg);
+}
+
+/* back-to-top arrow */
+body .anim-scroll-to-top::after {
+  content: "\f062";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+/* header + mobile side-panel logo white by default (dark DK logo on dark bg) */
+.header_style_01 .main-menu-logo img,
+.side-panel-logo img {
+  filter: brightness(0) invert(1);
+}
+
+.main-menu-logo img {
+  width: 52px;
+}
+
+@media (max-width: 320px) {
+  .main-menu-logo img {
+    width: 44px;
+  }
+}
+
+/* footer social brand icons */
+.h1_footer_01_social .social-icon {
+  font-size: 1.1em;
+  margin-right: 8px;
+  vertical-align: -0.15em;
+}
+
+.footer-contact-menu {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .h1_footer_01_social.footer-contact-menu {
+    justify-content: flex-end;
+  }
+}
+
+/* ---- contact page design (reference) ---- */
+
+.contact-page {
+  /* site theme accent (blue) -> drives the whole contact page */
+  --c1: #5b7cfa;
+  --c2: #4361ee;
+  --c-rgb: 67, 97, 238;
+  --c-grad: linear-gradient(135deg, var(--c1) 0%, var(--c2) 100%);
+  padding-top: 200px;
+  padding-bottom: 120px;
+}
+
+@media (max-width: 991px) {
+  .contact-page {
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+}
+
+/* pill badge */
+.c-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid rgba(var(--c-rgb), 0.45);
+  color: var(--c1);
+  border-radius: 50px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.c-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c2);
+}
+
+.c-heading {
+  font-size: 70px;
+  line-height: 1.02;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 26px 0 22px;
+}
+
+.c-heading .grad {
+  background: var(--c-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+}
+
+@media (max-width: 1199px) {
+  .c-heading {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 575px) {
+  .c-heading {
+    font-size: 40px;
+  }
+}
+
+.c-lead {
+  max-width: 460px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* info cards */
+.c-info-cards {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.c-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 22px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 250ms ease, transform 250ms ease;
+}
+
+.c-card:hover {
+  border-color: rgba(var(--c-rgb), 0.5);
+  transform: translateY(-3px);
+}
+
+.c-card .c-card-icon {
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  background: var(--c-grad);
+}
+
+.c-card .c-card-label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 5px;
+}
+
+.c-card .c-card-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.c-card .c-card-arrow {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 15px;
+  transition: color 250ms ease;
+}
+
+.c-card:hover .c-card-arrow {
+  color: var(--c1);
+}
+
+/* form panel */
+.c-form-panel {
+  position: relative;
+  border-radius: 22px;
+  padding: 44px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(var(--c-rgb), 0.3);
+  box-shadow: 0 30px 80px -30px rgba(var(--c-rgb), 0.4);
+}
+
+@media (max-width: 575px) {
+  .c-form-panel {
+    padding: 28px;
+  }
+}
+
+.c-form-panel h3 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.c-form-panel .c-form-sub {
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 28px;
+}
+
+.c-field {
+  margin-bottom: 20px;
+}
+
+.c-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 9px;
+}
+
+.c-field label .opt {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+}
+
+.c-field label .req {
+  color: #ff6b6b;
+  font-weight: 700;
+}
+
+.c-field .form-field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: #fff;
+  padding: 15px 18px;
+  font-size: 15px;
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.c-field .form-field::placeholder {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.c-field .form-field:focus {
+  outline: none;
+  border-color: var(--c1);
+  box-shadow: 0 0 0 3px rgba(var(--c-rgb), 0.18);
+}
+
+.c-field textarea.form-field {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.c-submit {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: var(--c-grad);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  padding: 17px;
+  cursor: pointer;
+  box-shadow: 0 14px 30px -10px rgba(var(--c-rgb), 0.55);
+  transition: transform 250ms ease, opacity 250ms ease;
+}
+
+.c-submit:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.c-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+/* form submit result message */
+.c-form-result {
+  margin: 16px 0 0;
+  font-size: 15px;
+  min-height: 1em;
+}
+
+.c-form-result.is-success {
+  color: #38d39f;
+}
+
+.c-form-result.is-error {
+  color: #ff6b6b;
+}
