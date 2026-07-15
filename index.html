@@ -1,2154 +1,1776 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="author" content="Portivio" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="DK Creative Studio is a professional graphic design and video editing agency that helps businesses grow, build trust, and generate more customers through creative solutions."
-    />
-    <meta
-      name="keywords"
-      content="portfoli, personal, personal portfoli, ui/ux, design, agency, branding, startup, consulting, it solution, network solution, digital"
-    />
-    <title>DK Creative Studio</title>
-    <link href="images/favicon.ico" rel="icon" sizes="any" />
-    <link
-      href="images/favicon.png"
-      rel="icon"
-      type="image/png"
-      sizes="128x128"
-    />
-    <link href="images/favicon.png" rel="shortcut icon" type="image/png" />
-    <!-- Icon Fonts -->
-    <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.css" />
-    <!-- Iconify (for brand/social icons) -->
-    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <!-- Signature script font (About Us) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      /* diagonal up-right arrow built from FontAwesome's up arrow */
-      .icon-up-right {
-        transform: rotate(45deg);
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Portivio" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description"
+    content="DK Creative Studio is a professional graphic design and video editing agency that helps businesses grow, build trust, and generate more customers through creative solutions." />
+  <meta name="keywords"
+    content="portfoli, personal, personal portfoli, ui/ux, design, agency, branding, startup, consulting, it solution, network solution, digital" />
+  <title>DK Creative Studio</title>
+  <link href="images/favicon.ico" rel="icon" sizes="any" />
+  <link href="images/favicon.png" rel="icon" type="image/png" sizes="128x128" />
+  <link href="images/favicon.png" rel="shortcut icon" type="image/png" />
+  <!-- Icon Fonts -->
+  <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.css" />
+  <!-- Iconify (for brand/social icons) -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+  <!-- Signature script font (About Us) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* diagonal up-right arrow built from FontAwesome's up arrow */
+    .icon-up-right {
+      transform: rotate(45deg);
+    }
+
+    /* back-to-top arrow: original used the custom icon font; use FontAwesome instead */
+    body .anim-scroll-to-top::after {
+      content: "\f062";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+
+    /* services accordion toggle: original used the custom icon font; use FontAwesome plus */
+    body .services_list_style1 .service_item .service_head:before {
+      content: "\f067";
+      font: 900 normal 24px/1em "Font Awesome 5 Free";
+    }
+
+    /* services feature list: webexbaseicon bullet load nahi hota -- FontAwesome arrow + hanging indent + equal columns */
+    body .services_list_style1 .service_item .service_content .service_content_right .service_content_list {
+      gap: 24px;
+    }
+
+    body .services_list_style1 .service_item .service_content .service_content_right .service_content_list .list1 {
+      flex: 1 1 0;
+    }
+
+    body .services_list_style1 .service_item .service_content .service_content_right .service_content_list .list1 li {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    body .services_list_style1 .service_item .service_content .service_content_right .service_content_list .list1 li:before {
+      content: "\f105";
+      font: 900 normal 15px/1.7 "Font Awesome 5 Free";
+      color: var(--webex-primary-color);
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-right: 0;
+    }
+
+    /* right column ko shrink hone do -- warna text viewport se bahar overflow karta hai */
+    body .services_list_style1 .service_item .service_content .service_content_right {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    /* tablet + mobile: image upar, text neeche -- stack karo (769-991px bhi) */
+    @media (max-width: 991px) {
+      body .services_list_style1 .service_item .service_content {
+        flex-direction: column;
+        gap: 2rem;
+        margin-left: 0;
+        padding: 0;
       }
 
-      /* back-to-top arrow: original used the custom icon font; use FontAwesome instead */
-      body .anim-scroll-to-top::after {
-        content: "\f062";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
+      body .services_list_style1 .service_item .service_content .service_content_left {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 340px;
+      }
+    }
+
+    /* chhote phones: feature list single column + image full width */
+    @media (max-width: 575px) {
+      body .services_list_style1 .service_item .service_content .service_content_left {
+        max-width: 100%;
       }
 
-      /* services accordion toggle: original used the custom icon font; use FontAwesome plus */
-      body .services_list_style1 .service_item .service_head:before {
-        content: "\f067";
-        font: 900 normal 24px/1em "Font Awesome 5 Free";
+      body .services_list_style1 .service_item .service_content .service_content_right .service_content_list {
+        flex-direction: column;
+        gap: 0;
       }
 
-      /* services feature list: webexbaseicon bullet load nahi hota -- FontAwesome arrow + hanging indent + equal columns */
-      body
-        .services_list_style1
-        .service_item
-        .service_content
-        .service_content_right
-        .service_content_list {
-        gap: 24px;
+      body .services_list_style1 .service_item .service_content .service_content_right h3 {
+        font-size: 20px;
+        line-height: 1.4;
       }
 
-      body
-        .services_list_style1
-        .service_item
-        .service_content
-        .service_content_right
-        .service_content_list
-        .list1 {
-        flex: 1 1 0;
+      /* lamba button text wrap ho jaye, overflow na kare */
+      body .services_list_style1 .service_item .service_content .portivio-btn-block .portivio-btn-primary {
+        white-space: normal;
+        text-align: center;
+        padding: 14px 20px;
+        line-height: 1.3;
       }
+    }
 
-      body
-        .services_list_style1
-        .service_item
-        .service_content
-        .service_content_right
-        .service_content_list
-        .list1
-        li {
-        position: relative;
-        padding-left: 24px;
-      }
+    /* click par khula hua service turant pehchana jaye -- accent highlight */
+    body .services_list_style1 .service_item .service_head {
+      transition:
+        background 0.35s ease,
+        border-color 0.35s ease;
+    }
 
-      body
-        .services_list_style1
-        .service_item
-        .service_content
-        .service_content_right
-        .service_content_list
-        .list1
-        li:before {
-        content: "\f105";
-        font: 900 normal 15px/1.7 "Font Awesome 5 Free";
-        color: var(--webex-primary-color);
-        position: absolute;
-        left: 0;
-        top: 0;
-        margin-right: 0;
-      }
+    body .services_list_style1 .service_item .service_head .service_count,
+    body .services_list_style1 .service_item .service_head:before {
+      transition: color 0.3s ease;
+    }
 
-      /* right column ko shrink hone do -- warna text viewport se bahar overflow karta hai */
-      body
-        .services_list_style1
-        .service_item
-        .service_content
-        .service_content_right {
-        flex: 1 1 0;
-        min-width: 0;
-      }
+    body .services_list_style1 .service_item:not(.active):hover .service_head .service_title {
+      color: rgba(var(--webex-primary-color-rgb), 0.7);
+    }
 
-      /* tablet + mobile: image upar, text neeche -- stack karo (769-991px bhi) */
-      @media (max-width: 991px) {
-        body .services_list_style1 .service_item .service_content {
-          flex-direction: column;
-          gap: 2rem;
-          margin-left: 0;
-          padding: 0;
-        }
+    body .services_list_style1 .service_item.active .service_head {
+      background: linear-gradient(90deg,
+          rgba(var(--webex-primary-color-rgb), 0.14) 0%,
+          rgba(var(--webex-primary-color-rgb), 0) 70%);
+      border-bottom-color: var(--webex-primary-color);
+    }
 
-        body
-          .services_list_style1
-          .service_item
-          .service_content
-          .service_content_left {
-          flex: 0 0 auto;
-          width: 100%;
-          max-width: 340px;
-        }
-      }
+    body .services_list_style1 .service_item.active .service_head .service_title,
+    body .services_list_style1 .service_item.active .service_head .service_count,
+    body .services_list_style1 .service_item.active .service_head:before {
+      color: var(--webex-primary-color);
+    }
 
-      /* chhote phones: feature list single column + image full width */
-      @media (max-width: 575px) {
-        body
-          .services_list_style1
-          .service_item
-          .service_content
-          .service_content_left {
-          max-width: 100%;
-        }
+    @media (prefers-reduced-motion: reduce) {
 
-        body
-          .services_list_style1
-          .service_item
-          .service_content
-          .service_content_right
-          .service_content_list {
-          flex-direction: column;
-          gap: 0;
-        }
-
-        body
-          .services_list_style1
-          .service_item
-          .service_content
-          .service_content_right
-          h3 {
-          font-size: 20px;
-          line-height: 1.4;
-        }
-
-        /* lamba button text wrap ho jaye, overflow na kare */
-        body
-          .services_list_style1
-          .service_item
-          .service_content
-          .portivio-btn-block
-          .portivio-btn-primary {
-          white-space: normal;
-          text-align: center;
-          padding: 14px 20px;
-          line-height: 1.3;
-        }
-      }
-
-      /* click par khula hua service turant pehchana jaye -- accent highlight */
-      body .services_list_style1 .service_item .service_head {
-        transition:
-          background 0.35s ease,
-          border-color 0.35s ease;
-      }
-
+      body .services_list_style1 .service_item .service_head,
       body .services_list_style1 .service_item .service_head .service_count,
       body .services_list_style1 .service_item .service_head:before {
-        transition: color 0.3s ease;
+        transition: none;
       }
+    }
 
-      body
-        .services_list_style1
-        .service_item:not(.active):hover
-        .service_head
-        .service_title {
-        color: rgba(var(--webex-primary-color-rgb), 0.7);
-      }
+    /* header + mobile side-panel logo white by default (dark DK logo on dark bg) */
+    .header_style_01 .main-menu-logo img,
+    .side-panel-logo img {
+      filter: brightness(0) invert(1);
+    }
 
-      body .services_list_style1 .service_item.active .service_head {
-        background: linear-gradient(
-          90deg,
-          rgba(var(--webex-primary-color-rgb), 0.14) 0%,
-          rgba(var(--webex-primary-color-rgb), 0) 70%
-        );
-        border-bottom-color: var(--webex-primary-color);
-      }
+    /* portfolio even-card videos -- size them exactly like the image thumbs */
+    .project_style1_item .project_thumb.project_video_card {
+      overflow: hidden;
+      position: relative;
+    }
 
-      body
-        .services_list_style1
-        .service_item.active
-        .service_head
-        .service_title,
-      body
-        .services_list_style1
-        .service_item.active
-        .service_head
-        .service_count,
-      body .services_list_style1 .service_item.active .service_head:before {
-        color: var(--webex-primary-color);
-      }
+    .project_style1_item .project_thumb .project_video {
+      width: 100%;
+      height: 430px;
+      display: block;
+      border: 0;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
 
-      @media (prefers-reduced-motion: reduce) {
-        body .services_list_style1 .service_item .service_head,
-        body .services_list_style1 .service_item .service_head .service_count,
-        body .services_list_style1 .service_item .service_head:before {
-          transition: none;
-        }
-      }
-
-      /* header + mobile side-panel logo white by default (dark DK logo on dark bg) */
-      .header_style_01 .main-menu-logo img,
-      .side-panel-logo img {
-        filter: brightness(0) invert(1);
-      }
-
-      /* portfolio even-card videos -- size them exactly like the image thumbs */
-      .project_style1_item .project_thumb.project_video_card {
-        overflow: hidden;
-        position: relative;
-      }
-
+    /* tablet -- thodi chhoti height */
+    @media (max-width: 991px) {
       .project_style1_item .project_thumb .project_video {
-        width: 100%;
-        height: 430px;
-        display: block;
-        border: 0;
-        object-fit: cover;
-        border-radius: 10px 10px 0 0;
+        height: 380px;
+      }
+    }
+
+    /* mobile -- full-width column, fluid-ish height */
+    @media (max-width: 575px) {
+      .project_style1_item .project_thumb .project_video {
+        height: 70vw;
+        max-height: 460px;
+        min-height: 300px;
       }
 
-      /* tablet -- thodi chhoti height */
-      @media (max-width: 991px) {
-        .project_style1_item .project_thumb .project_video {
-          height: 380px;
-        }
-      }
-
-      /* mobile -- full-width column, fluid-ish height */
-      @media (max-width: 575px) {
-        .project_style1_item .project_thumb .project_video {
-          height: 70vw;
-          max-height: 460px;
-          min-height: 300px;
-        }
-
-        .project_video_card .project_play_btn {
-          width: 58px;
-          height: 58px;
-          font-size: 24px;
-        }
-      }
-
-      /* click-to-play button on portfolio video cards */
       .project_video_card .project_play_btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--webex-primary-color);
-        color: #fff;
-        font-size: 30px;
-        z-index: 2;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-        transition: transform 300ms ease;
+        width: 58px;
+        height: 58px;
+        font-size: 24px;
       }
+    }
 
-      .project_video_card .project_play_btn:hover {
-        transform: translate(-50%, -50%) scale(1.08);
+    /* click-to-play button on portfolio video cards */
+    .project_video_card .project_play_btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--webex-primary-color);
+      color: #fff;
+      font-size: 30px;
+      z-index: 2;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: transform 300ms ease;
+    }
+
+    .project_video_card .project_play_btn:hover {
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    /* once playing, hide the poster + play button */
+    .project_video_card.is-playing .project_play_btn,
+    .project_video_card.is-playing .project_video_poster {
+      display: none;
+    }
+
+    /* skill section brand icons (Iconify) */
+    .skill_style1 .skill_icon iconify-icon {
+      font-size: 60px;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    /* DaVinci Resolve only has a single-colour icon — tint it so it shows on the dark bg */
+    .skill_style1 .skill_icon .skill-icon-mono {
+      color: #00b8d4;
+    }
+
+    /* footer social brand icons sit just before the name */
+    .h1_footer_01_social .social-icon {
+      font-size: 1.1em;
+      margin-right: 8px;
+      vertical-align: -0.15em;
+    }
+
+    /* footer right-side Contact Us menu */
+    .footer-contact-menu {
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .h1_footer_01_social.footer-contact-menu {
+        justify-content: flex-end;
       }
+    }
 
-      /* once playing, hide the poster + play button */
-      .project_video_card.is-playing .project_play_btn,
-      .project_video_card.is-playing .project_video_poster {
-        display: none;
-      }
+    /* About-section circles: creative icon stacked above each title */
+    .feature-block1-wrap .feature-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-align: center;
+    }
 
-      /* skill section brand icons (Iconify) */
-      .skill_style1 .skill_icon iconify-icon {
-        font-size: 60px;
-        line-height: 1;
-        display: inline-block;
-      }
+    .feature-block1-wrap .feature-icon {
+      font-size: 44px;
+      color: var(--webex-primary-color);
+      transition: transform 400ms ease;
+    }
 
-      /* DaVinci Resolve only has a single-colour icon — tint it so it shows on the dark bg */
-      .skill_style1 .skill_icon .skill-icon-mono {
-        color: #00b8d4;
-      }
+    .feature-block1-wrap .feature-block1-item:hover .feature-icon {
+      transform: translateY(-4px) scale(1.08);
+    }
 
-      /* footer social brand icons sit just before the name */
-      .h1_footer_01_social .social-icon {
-        font-size: 1.1em;
-        margin-right: 8px;
-        vertical-align: -0.15em;
-      }
+    /* extend-section video with a custom play / pause button */
+    .h1_extend_video {
+      position: relative;
+      line-height: 0;
+    }
 
-      /* footer right-side Contact Us menu */
-      .footer-contact-menu {
-        margin-bottom: 10px;
-      }
+    /* responsive 16:9 frame that holds the YouTube iframe */
+    .h1_extend_video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 6px;
+      overflow: hidden;
+    }
 
-      @media (min-width: 768px) {
-        .h1_footer_01_social.footer-contact-menu {
-          justify-content: flex-end;
-        }
-      }
+    .h1_extend_video-frame iframe,
+    .h1_extend_video-frame video,
+    .h1_extend_video-frame>div {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
 
-      /* About-section circles: creative icon stacked above each title */
-      .feature-block1-wrap .feature-inner {
+    .h1_extend_video-frame video {
+      object-fit: cover;
+    }
+
+    .h1_extend_video .video-toggle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--webex-primary-color);
+      color: #fff;
+      font-size: 34px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition:
+        transform 300ms ease,
+        opacity 300ms ease,
+        background 300ms ease;
+    }
+
+    .h1_extend_video .video-toggle-btn:hover {
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    /* fade the button out while playing, reveal it on hover */
+    .h1_extend_video.is-playing .video-toggle-btn {
+      opacity: 0;
+    }
+
+    .h1_extend_video.is-playing:hover .video-toggle-btn {
+      opacity: 1;
+    }
+
+    /* ===================== About Us (DK) ===================== */
+    .about_dk_section {
+      overflow: hidden;
+    }
+
+    .about_dk_left .sub-title {
+      margin-bottom: 18px;
+    }
+
+    .about_dk_heading {
+      font-family: var(--heading-font);
+      font-weight: 600;
+      color: #fff;
+      font-size: clamp(30px, 3.4vw, 50px);
+      line-height: 1.18;
+      margin-bottom: 26px;
+    }
+
+    .about_dk_heading .about_dk_accent {
+      color: var(--webex-primary-color);
+    }
+
+    /* image pills inside the heading */
+    .about_dk_heading .about_dk_pill {
+      display: inline-block;
+      width: clamp(70px, 7vw, 96px);
+      height: clamp(34px, 3.4vw, 46px);
+      border-radius: 40px;
+      overflow: hidden;
+      vertical-align: middle;
+      margin: 0 6px;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .about_dk_heading .about_dk_pill img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about_dk_left p {
+      color: #b8bcc9;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      max-width: 520px;
+    }
+
+    .about_dk_left .about_dk_intro {
+      color: #e8eaf2;
+      font-size: 16px;
+    }
+
+    .about_dk_left .about_dk_link {
+      color: var(--webex-primary-color);
+      font-weight: 600;
+    }
+
+    .about_dk_sign {
+      font-family: "Dancing Script", cursive;
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--webex-primary-color);
+      line-height: 1;
+      margin: 22px 0 4px;
+    }
+
+    .about_dk_founder {
+      color: #e8eaf2 !important;
+      font-weight: 600;
+      margin-bottom: 34px !important;
+    }
+
+    /* stats row */
+    .about_dk_stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px 38px;
+    }
+
+    .about_dk_stat iconify-icon {
+      font-size: 26px;
+      color: var(--webex-primary-color);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .about_dk_stat h3 {
+      color: var(--webex-primary-color);
+      font-family: var(--heading-font);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1;
+      margin: 0 0 4px;
+    }
+
+    .about_dk_stat h3 .counter {
+      color: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      font-size: 42px;
+      letter-spacing: 0;
+    }
+
+    .about_dk_stat span {
+      color: #b8bcc9;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ---- right side: overlapping circles ---- */
+    .about_dk_circles {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      height: 600px;
+      margin: 0 auto;
+    }
+
+    .about_dk_circle {
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      border: 1px solid rgba(var(--webex-primary-color-rgb), 0.35);
+      background: radial-gradient(circle at 32% 26%,
+          rgba(var(--webex-primary-color-rgb), 0.2),
+          rgba(12, 14, 32, 0.55) 58%,
+          rgba(8, 10, 24, 0.8));
+      box-shadow:
+        inset 0 0 60px rgba(var(--webex-primary-color-rgb), 0.12),
+        0 24px 60px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+
+    .about_dk_circle:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow:
+        inset 0 0 70px rgba(var(--webex-primary-color-rgb), 0.2),
+        0 30px 70px rgba(0, 0, 0, 0.55);
+      z-index: 5;
+    }
+
+    .about_dk_circle.circle-1 {
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .about_dk_circle.circle-2 {
+      top: 22%;
+      left: 38%;
+      z-index: 3;
+    }
+
+    .about_dk_circle.circle-3 {
+      top: 48%;
+      left: 4%;
+      z-index: 2;
+    }
+
+    .about_dk_circle_inner {
+      max-width: 78%;
+    }
+
+    .about_dk_circle_icon {
+      font-size: 34px;
+      color: var(--webex-primary-color);
+      margin-bottom: 10px;
+    }
+
+    .about_dk_circle_inner h4 {
+      color: #fff;
+      font-family: var(--heading-font);
+      font-weight: 600;
+      font-size: 19px;
+      margin: 0 0 8px;
+    }
+
+    .about_dk_circle_inner p {
+      color: #aab0c2;
+      font-size: 12.5px;
+      line-height: 1.55;
+      margin: 0 0 12px;
+    }
+
+    .about_dk_circle_arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--webex-primary-color);
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .about_dk_circle_arrow:hover {
+      transform: translateX(5px);
+      color: var(--webex-primary-color);
+    }
+
+    .about_dk_star {
+      position: absolute;
+      left: -6%;
+      top: 56%;
+      color: var(--webex-primary-color);
+      font-size: 26px;
+      z-index: 4;
+    }
+
+    /* tablet & mobile: stack circles vertically */
+    @media (max-width: 991px) {
+      .about_dk_circles {
+        height: auto;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 14px;
-        text-align: center;
-      }
-
-      .feature-block1-wrap .feature-icon {
-        font-size: 44px;
-        color: var(--webex-primary-color);
-        transition: transform 400ms ease;
-      }
-
-      .feature-block1-wrap .feature-block1-item:hover .feature-icon {
-        transform: translateY(-4px) scale(1.08);
-      }
-
-      /* extend-section video with a custom play / pause button */
-      .h1_extend_video {
-        position: relative;
-        line-height: 0;
-      }
-
-      /* responsive 16:9 frame that holds the YouTube iframe */
-      .h1_extend_video-frame {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        border-radius: 6px;
-        overflow: hidden;
-      }
-
-      .h1_extend_video-frame iframe,
-      .h1_extend_video-frame video,
-      .h1_extend_video-frame > div {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
-
-      .h1_extend_video-frame video {
-        object-fit: cover;
-      }
-
-      .h1_extend_video .video-toggle-btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 84px;
-        height: 84px;
-        border-radius: 50%;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--webex-primary-color);
-        color: #fff;
-        font-size: 34px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-        transition:
-          transform 300ms ease,
-          opacity 300ms ease,
-          background 300ms ease;
-      }
-
-      .h1_extend_video .video-toggle-btn:hover {
-        transform: translate(-50%, -50%) scale(1.08);
-      }
-
-      /* fade the button out while playing, reveal it on hover */
-      .h1_extend_video.is-playing .video-toggle-btn {
-        opacity: 0;
-      }
-
-      .h1_extend_video.is-playing:hover .video-toggle-btn {
-        opacity: 1;
-      }
-
-      /* ===================== About Us (DK) ===================== */
-      .about_dk_section {
-        overflow: hidden;
-      }
-
-      .about_dk_left .sub-title {
-        margin-bottom: 18px;
-      }
-
-      .about_dk_heading {
-        font-family: var(--heading-font);
-        font-weight: 600;
-        color: #fff;
-        font-size: clamp(30px, 3.4vw, 50px);
-        line-height: 1.18;
-        margin-bottom: 26px;
-      }
-
-      .about_dk_heading .about_dk_accent {
-        color: var(--webex-primary-color);
-      }
-
-      /* image pills inside the heading */
-      .about_dk_heading .about_dk_pill {
-        display: inline-block;
-        width: clamp(70px, 7vw, 96px);
-        height: clamp(34px, 3.4vw, 46px);
-        border-radius: 40px;
-        overflow: hidden;
-        vertical-align: middle;
-        margin: 0 6px;
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-      }
-
-      .about_dk_heading .about_dk_pill img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .about_dk_left p {
-        color: #b8bcc9;
-        font-size: 15px;
-        line-height: 1.7;
-        margin-bottom: 16px;
-        max-width: 520px;
-      }
-
-      .about_dk_left .about_dk_intro {
-        color: #e8eaf2;
-        font-size: 16px;
-      }
-
-      .about_dk_left .about_dk_link {
-        color: var(--webex-primary-color);
-        font-weight: 600;
-      }
-
-      .about_dk_sign {
-        font-family: "Dancing Script", cursive;
-        font-size: 38px;
-        font-weight: 700;
-        color: var(--webex-primary-color);
-        line-height: 1;
-        margin: 22px 0 4px;
-      }
-
-      .about_dk_founder {
-        color: #e8eaf2 !important;
-        font-weight: 600;
-        margin-bottom: 34px !important;
-      }
-
-      /* stats row */
-      .about_dk_stats {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px 38px;
-      }
-
-      .about_dk_stat iconify-icon {
-        font-size: 26px;
-        color: var(--webex-primary-color);
-        display: block;
-        margin-bottom: 8px;
-      }
-
-      .about_dk_stat h3 {
-        color: var(--webex-primary-color);
-        font-family: var(--heading-font);
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 1;
-        margin: 0 0 4px;
-      }
-
-      .about_dk_stat h3 .counter {
-        color: inherit;
-        font-family: inherit;
-        font-weight: inherit;
-        font-size: 42px;
-        letter-spacing: 0;
-      }
-
-      .about_dk_stat span {
-        color: #b8bcc9;
-        font-size: 13px;
-        letter-spacing: 0.3px;
-      }
-
-      /* ---- right side: overlapping circles ---- */
-      .about_dk_circles {
-        position: relative;
-        width: 100%;
-        max-width: 520px;
-        height: 600px;
-        margin: 0 auto;
+        gap: 24px;
+        margin-top: 40px;
       }
 
       .about_dk_circle {
-        position: absolute;
-        width: 270px;
-        height: 270px;
-        border-radius: 50%;
-        border: 1px solid rgba(var(--webex-primary-color-rgb), 0.35);
-        background: radial-gradient(
-          circle at 32% 26%,
-          rgba(var(--webex-primary-color-rgb), 0.2),
-          rgba(12, 14, 32, 0.55) 58%,
-          rgba(8, 10, 24, 0.8)
-        );
-        box-shadow:
-          inset 0 0 60px rgba(var(--webex-primary-color-rgb), 0.12),
-          0 24px 60px rgba(0, 0, 0, 0.45);
-        backdrop-filter: blur(2px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        transition:
-          transform 0.4s ease,
-          box-shadow 0.4s ease;
-      }
-
-      .about_dk_circle:hover {
-        transform: translateY(-6px) scale(1.02);
-        box-shadow:
-          inset 0 0 70px rgba(var(--webex-primary-color-rgb), 0.2),
-          0 30px 70px rgba(0, 0, 0, 0.55);
-        z-index: 5;
-      }
-
-      .about_dk_circle.circle-1 {
-        top: 0;
-        left: 0;
-        z-index: 1;
-      }
-
-      .about_dk_circle.circle-2 {
-        top: 22%;
-        left: 38%;
-        z-index: 3;
-      }
-
-      .about_dk_circle.circle-3 {
-        top: 48%;
-        left: 4%;
-        z-index: 2;
-      }
-
-      .about_dk_circle_inner {
-        max-width: 78%;
-      }
-
-      .about_dk_circle_icon {
-        font-size: 34px;
-        color: var(--webex-primary-color);
-        margin-bottom: 10px;
-      }
-
-      .about_dk_circle_inner h4 {
-        color: #fff;
-        font-family: var(--heading-font);
-        font-weight: 600;
-        font-size: 19px;
-        margin: 0 0 8px;
-      }
-
-      .about_dk_circle_inner p {
-        color: #aab0c2;
-        font-size: 12.5px;
-        line-height: 1.55;
-        margin: 0 0 12px;
-      }
-
-      .about_dk_circle_arrow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--webex-primary-color);
-        font-size: 20px;
-        transition: transform 0.3s ease;
-      }
-
-      .about_dk_circle_arrow:hover {
-        transform: translateX(5px);
-        color: var(--webex-primary-color);
+        position: static;
+        width: 280px;
+        height: 280px;
       }
 
       .about_dk_star {
-        position: absolute;
-        left: -6%;
-        top: 56%;
-        color: var(--webex-primary-color);
-        font-size: 26px;
-        z-index: 4;
+        display: none;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .about_dk_stats {
+        gap: 24px 28px;
       }
 
-      /* tablet & mobile: stack circles vertically */
-      @media (max-width: 991px) {
-        .about_dk_circles {
-          height: auto;
-          max-width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 24px;
-          margin-top: 40px;
-        }
-
-        .about_dk_circle {
-          position: static;
-          width: 280px;
-          height: 280px;
-        }
-
-        .about_dk_star {
-          display: none;
-        }
+      .about_dk_stat {
+        flex: 0 0 calc(50% - 28px);
       }
 
-      @media (max-width: 575px) {
-        .about_dk_stats {
-          gap: 24px 28px;
-        }
-
-        .about_dk_stat {
-          flex: 0 0 calc(50% - 28px);
-        }
-
-        .about_dk_circle {
-          width: 240px;
-          height: 240px;
-        }
+      .about_dk_circle {
+        width: 240px;
+        height: 240px;
       }
+    }
 
-      /* ===================== Hero banner responsive fix ===================== */
-      /* 768-1199px pe person image (.banner-thumb) absolute thi (right:50px) jiski wajah
+    /* ===================== Hero banner responsive fix ===================== */
+    /* 768-1199px pe person image (.banner-thumb) absolute thi (right:50px) jiski wajah
        se wo heading text ke upar overlap ho rahi thi. Ise normal flow me laa ke image
        ko text ke neeche center karo -- koi overlap nahi. */
-      /* NOTE: inline <style> style.css se pehle load hoti hai, isliye `body` prefix
+    /* NOTE: inline <style> style.css se pehle load hoti hai, isliye `body` prefix
        laga ke specificity badhayi hai warna style.css ki rules override kar deti hain. */
-      @media screen and (max-width: 1199px) {
-        body .home_banner_01.pdt-200 {
-          padding-top: 140px;
-          padding-bottom: 40px;
-        }
+    @media screen and (max-width: 1199px) {
+      body .home_banner_01.pdt-200 {
+        padding-top: 140px;
+        padding-bottom: 40px;
+      }
 
-        body .home_banner_01 .banner-item .banner-info {
-          margin-left: 0;
-          margin-top: 10px;
-        }
+      body .home_banner_01 .banner-item .banner-info {
+        margin-left: 0;
+        margin-top: 10px;
+      }
 
-        body .home_banner_01 .banner-item .banner-thumb {
-          position: relative;
-          right: auto;
-          left: auto;
-          bottom: auto;
-          width: 100%;
-          max-width: 420px;
-          margin: 20px auto 0;
-          text-align: center;
-        }
+      body .home_banner_01 .banner-item .banner-thumb {
+        position: relative;
+        right: auto;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        max-width: 420px;
+        margin: 20px auto 0;
+        text-align: center;
+      }
 
-        body .home_banner_01 .banner-item .banner-thumb img {
-          width: 100%;
-          height: auto;
-        }
+      body .home_banner_01 .banner-item .banner-thumb img {
+        width: 100%;
+        height: auto;
+      }
 
-        /* quote card ko tablet/mobile pe bhi dikhao -- image ke bottom pe overlap
+      /* quote card ko tablet/mobile pe bhi dikhao -- image ke bottom pe overlap
          (desktop wala same look, style.css use ≤1024px pe hide kar deti thi) */
-        body .home_banner_01 .banner-item .banner-thumb .story-box {
-          display: flex;
-        }
-
-        /* floating art object image ke bahar overflow na kare */
-        body .home_banner_01 .banner-item .banner-thumb .h1-obj1 {
-          left: -40px;
-          top: auto;
-          bottom: 120px;
-        }
-      }
-
-      /* tablet: heading + spacing thoda aur compact */
-      @media screen and (max-width: 991px) {
-        body .home_banner_01.pdt-200 {
-          padding-top: 120px;
-        }
-
-        body .home_banner_01 .banner-item .banner-thumb {
-          max-width: 380px;
-        }
-      }
-
-      /* mobile: top padding aur chhoti, text/buttons comfortably fit ho jaayein */
-      @media screen and (max-width: 767px) {
-        body .home_banner_01.pdt-200 {
-          padding-top: 100px;
-        }
-
-        body .home_banner_01 .banner-item .h1-banner-text {
-          margin-top: 20px;
-          margin-bottom: 30px;
-        }
-
-        body .home_banner_01 .portivio-btn-block-2 {
-          flex-wrap: wrap;
-        }
-
-        body .home_banner_01 .banner-item .banner-thumb {
-          max-width: 340px;
-        }
-      }
-
-      /* ===== Hero story-box (quote card) ko chhota karo ===== */
       body .home_banner_01 .banner-item .banner-thumb .story-box {
-        padding: 20px;
-        gap: 16px;
-        border-radius: 8px;
-        justify-content: flex-start;
-        align-items: center;
+        display: flex;
       }
 
-      body .home_banner_01 .banner-item .banner-thumb .story-box .quote-icon {
-        height: 48px;
-        width: 48px;
-        font-size: 18px;
+      /* floating art object image ke bahar overflow na kare */
+      body .home_banner_01 .banner-item .banner-thumb .h1-obj1 {
+        left: -40px;
+        top: auto;
+        bottom: 120px;
+      }
+    }
+
+    /* tablet: heading + spacing thoda aur compact */
+    @media screen and (max-width: 991px) {
+      body .home_banner_01.pdt-200 {
+        padding-top: 120px;
       }
 
-      body
-        .home_banner_01
-        .banner-item
-        .banner-thumb
-        .story-box
-        .story-description
-        .title {
-        font-size: 20px;
-        line-height: 28px;
-        margin-bottom: 6px;
+      body .home_banner_01 .banner-item .banner-thumb {
+        max-width: 380px;
+      }
+    }
+
+    /* mobile: top padding aur chhoti, text/buttons comfortably fit ho jaayein */
+    @media screen and (max-width: 767px) {
+      body .home_banner_01.pdt-200 {
+        padding-top: 100px;
       }
 
-      body
-        .home_banner_01
-        .banner-item
-        .banner-thumb
-        .story-box
-        .story-description
-        .name {
-        font-size: 14px;
+      body .home_banner_01 .banner-item .h1-banner-text {
+        margin-top: 20px;
+        margin-bottom: 30px;
       }
-    </style>
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-  </head>
 
-  <body class="layout-dark-mood">
-    <!-- Preloader Start -->
-    <!-- Preloader Start -->
-    <section>
-      <div id="preloader">
-        <div id="ctn-preloader" class="ctn-preloader">
-          <div class="animation-preloader">
-            <div class="spinner"></div>
-            <div class="txt-loading">
-              <span data-text-preloader="D" class="letters-loading">D</span>
-              <span data-text-preloader="H" class="letters-loading">H</span>
-              <span data-text-preloader="R" class="letters-loading">R</span>
-              <span data-text-preloader="U" class="letters-loading">U</span>
-              <span data-text-preloader="V" class="letters-loading">V</span>
-              <span data-text-preloader="I" class="letters-loading">I</span>
-              <span data-text-preloader="N" class="letters-loading">N</span>
-            </div>
-          </div>
-          <div class="loader-section section-left"></div>
-          <div class="loader-section section-right"></div>
-        </div>
-      </div>
-    </section>
-    <!-- Preloader End -->
-    <!-- Preloader End -->
-    <!-- Header Area Start -->
-    <header class="header_style_01">
-      <nav class="main-menu sticky-header">
-        <div class="main-menu-wrapper">
-          <div class="main-menu-logo">
-            <a href="#home">
-              <img src="images/dkphoto/logo.png" alt="DK Studio" />
-            </a>
-          </div>
-          <ul class="main-nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <div class="main-menu-right">
-            <div class="portivio-btn-block">
-              <a class="portivio-btn portivio-btn-circle" href="contact.html"
-                ><i class="fas fa-arrow-up icon-up-right"></i
-              ></a>
-              <a class="portivio-btn portivio-btn-primary" href="contact.html"
-                >Hire Me</a
-              >
-              <a class="portivio-btn portivio-btn-circle" href="contact.html"
-                ><i class="fas fa-arrow-up icon-up-right"></i
-              ></a>
-            </div>
-            <a href="#" class="mobile-nav-toggler">
-              <span></span>
-              <span></span>
-              <span></span>
-            </a>
+      body .home_banner_01 .portivio-btn-block-2 {
+        flex-wrap: wrap;
+      }
+
+      body .home_banner_01 .banner-item .banner-thumb {
+        max-width: 340px;
+      }
+    }
+
+    /* ===== Hero story-box (quote card) ko chhota karo ===== */
+    body .home_banner_01 .banner-item .banner-thumb .story-box {
+      padding: 20px;
+      gap: 16px;
+      border-radius: 8px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    body .home_banner_01 .banner-item .banner-thumb .story-box .quote-icon {
+      height: 48px;
+      width: 48px;
+      font-size: 18px;
+    }
+
+    body .home_banner_01 .banner-item .banner-thumb .story-box .story-description .title {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 6px;
+    }
+
+    body .home_banner_01 .banner-item .banner-thumb .story-box .story-description .name {
+      font-size: 14px;
+    }
+  </style>
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body class="layout-dark-mood">
+  <!-- Preloader Start -->
+  <!-- Preloader Start -->
+  <section>
+    <div id="preloader">
+      <div id="ctn-preloader" class="ctn-preloader">
+        <div class="animation-preloader">
+          <div class="spinner"></div>
+          <div class="txt-loading">
+            <span data-text-preloader="D" class="letters-loading">D</span>
+            <span data-text-preloader="H" class="letters-loading">H</span>
+            <span data-text-preloader="R" class="letters-loading">R</span>
+            <span data-text-preloader="U" class="letters-loading">U</span>
+            <span data-text-preloader="V" class="letters-loading">V</span>
+            <span data-text-preloader="I" class="letters-loading">I</span>
+            <span data-text-preloader="N" class="letters-loading">N</span>
           </div>
         </div>
-      </nav>
-    </header>
-    <!-- Header Area End -->
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <!-- Home Banner Start -->
-        <section
-          id="home"
-          class="home_banner_01 pdt-200 pdb-lg-120 pdb-sm-0 bg-no-repeat bg-pos-cc"
-        >
-          <div class="container">
-            <div class="banner-item">
-              <div class="row align-items-center">
-                <div class="col-xl-12 anim-heading animation-style1">
-                  <h1
-                    class="h1-banner-title text-white f-weight-400 mrb-sm-20 wow fadeInLeft"
-                  >
-                    <span class="h1-banner-emoji mrr-20">
-                      <svg
-                        viewBox="0 0 100 100"
-                        width="46"
-                        height="46"
-                        fill="var(--webex-primary-color)"
-                        aria-hidden="true"
-                      >
-                        <g>
-                          <path d="M50,50 Q47,28 50,4 Q53,28 50,50 Z" />
-                          <path
-                            d="M50,50 Q47,28 50,4 Q53,28 50,50 Z"
-                            transform="rotate(45 50 50)"
-                          />
-                          <path
-                            d="M50,50 Q47,28 50,4 Q53,28 50,50 Z"
-                            transform="rotate(90 50 50)"
-                          />
-                          <path
-                            d="M50,50 Q47,28 50,4 Q53,28 50,50 Z"
-                            transform="rotate(135 50 50)"
-                          />
-                          <path
-                            d="M50,50 Q47,28 50,4 Q53,28 50,50 Z"
-                            transform="rotate(180 50 50)"
-                          />
-                          <path
-                            d="M50,50 Q47,28 50,4 Q53,28 50,50 Z"
-                            transform="rotate(225 50 50)"
-                          />
-                          <path
-                            d="M50,50 Q47,28 50,4 Q53,28 50,50 Z"
-                            transform="rotate(270 50 50)"
-                          />
-                          <path
-                            d="M50,50 Q47,28 50,4 Q53,28 50,50 Z"
-                            transform="rotate(315 50 50)"
-                          />
-                        </g>
-                      </svg>
-                    </span>
-                    Creative Minds
-                  </h1>
-                  <h1
-                    class="h1-banner-title text-white f-weight-400 d-block d-xl-none d-lg-none d-md-none wow fadeInRight"
-                  >
-                    Powerful Results
-                  </h1>
-                </div>
-                <div class="col-xl-12 anim-heading animation-style1">
-                  <h1
-                    class="h1-banner-title text-white f-weight-400 d-none d-xl-block d-lg-block d-md-block mrb-xxl-30 anim-title"
-                  >
-                    Powerful
-                  </h1>
-                </div>
-                <div class="col-xl-7">
-                  <div class="banner-info">
-                    <div class="anim-heading animation-style1">
-                      <h1
-                        class="h1-banner-title text-white f-weight-400 d-none d-xl-block d-lg-block d-md-block anim-title"
-                      >
-                        Results
-                      </h1>
-                    </div>
-                    <p class="h1-banner-text">
-                      Professional Graphic Design,<br />
-                      Video Editing Solutions <br />
-                      that help businesses grow,<br />
-                      build trust, and generate more customers.
-                    </p>
-                    <div class="portivio-btn-block-2">
-                      <a
-                        class="portivio-btn-2 portivio-btn-2-circle"
-                        href="#portfolio"
-                        ><i class="fas fa-arrow-down"></i
-                      ></a>
-                      <a
-                        class="portivio-btn-2 portivio-btn-2-primary"
-                        href="#portfolio"
-                        >VIEW MY WORK</a
-                      >
-                      <a
-                        class="portivio-btn-2 portivio-btn-2-circle"
-                        href="#portfolio"
-                        ><i class="fas fa-arrow-down"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-5">
-                  <div class="banner-thumb">
-                    <img
-                      class="d-block"
-                      src="images/bg/dhruvin.png"
-                      alt="Thumb"
-                    />
-                    <div class="story-box wow fadeInUp">
-                      <div class="quote-icon">
-                        <i class="fas fa-quote-right"></i>
-                      </div>
-                      <div class="story-description">
-                        <h4 class="title">
-                          "Young Founder. Limitless Vision."
-                        </h4>
-                        <span class="name">Dhruvin Kachhiya</span>
-                      </div>
-                    </div>
-                    <div class="h1-obj1 wow fadeInRight">
-                      <svg
-                        viewBox="0 0 100 100"
-                        width="70"
-                        height="94"
-                        fill="var(--webex-primary-color)"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M62,2 C63,8 65,10 71,11 C65,12 63,14 62,20 C61,14 59,12 53,11 C59,10 61,8 62,2 Z"
-                        />
-                        <path
-                          d="M34,24 C36,36 40,40 52,42 C40,44 36,48 34,60 C32,48 28,44 16,42 C28,40 32,36 34,24 Z"
-                        />
-                        <path
-                          d="M76,32 C77,37 79,39 84,40 C79,41 77,43 76,48 C75,43 73,41 68,40 C73,39 75,37 76,32 Z"
-                        />
-                      </svg>
-                    </div>
-                    <!-- <div class="h1-obj2 wow zoomIn"><img src="images/objects/h1-banner-art3.png" alt="" /></div> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Home Banner End -->
-        <!-- About Us Section Start -->
-        <section id="about" class="pdt-120 pdb-120 about_dk_section">
-          <div class="container">
-            <div class="row align-items-center gy-5">
-              <!-- LEFT -->
-              <div
-                class="col-lg-6 wow fadeInLeft"
-                data-wow-delay="0ms"
-                data-wow-duration="1500ms"
-              >
-                <div class="about_dk_left">
-                  <h5 class="sub-title">( About Us )</h5>
-                  <h2 class="about_dk_heading">
-                    Creative Solutions
-                    <span class="about_dk_pill"
-                      ><img src="images/about/h1-ab-img1.png" alt=""
-                    /></span>
-                    That Build Strong
-                    <span class="about_dk_accent">Brands &amp; Bigger</span>
-                    <span class="about_dk_pill"
-                      ><img src="images/about/h1-ab-img2.png" alt=""
-                    /></span>
-                    <span class="about_dk_accent">Visions.</span>
-                  </h2>
-                  <p class="about_dk_intro">
-                    Hi, I'm Dhruvin — the creative mind behind
-                    <span class="about_dk_link">DK Creative Studio</span>.
-                  </p>
-                  <p>
-                    At just 24, I started this agency with a big vision — to
-                    help businesses grow through powerful design, impactful
-                    videos, and creative storytelling.
-                  </p>
-                  <p>
-                    With 4+ years of experience and the trust of global brands,
-                    I turn ideas into visuals that connect, engage, and convert.
-                  </p>
-                  <div class="about_dk_sign">Dhruvin</div>
-                  <p class="about_dk_founder">
-                    Founder,
-                    <span class="about_dk_link">DK Creative Studio</span>
-                  </p>
-
-                  <div class="about_dk_stats">
-                    <div class="about_dk_stat">
-                      <iconify-icon icon="lucide:trophy"></iconify-icon>
-                      <h3><span class="counter">4</span>+</h3>
-                      <span>Years Experience</span>
-                    </div>
-                    <div class="about_dk_stat">
-                      <iconify-icon icon="lucide:image"></iconify-icon>
-                      <h3><span class="counter">500</span>+</h3>
-                      <span>Projects Completed</span>
-                    </div>
-                    <div class="about_dk_stat">
-                      <iconify-icon icon="lucide:smile"></iconify-icon>
-                      <h3><span class="counter">100</span>+</h3>
-                      <span>Happy Clients</span>
-                    </div>
-                    <div class="about_dk_stat">
-                      <iconify-icon icon="lucide:globe"></iconify-icon>
-                      <h3><span class="counter">10</span>+</h3>
-                      <span>Countries Served</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- RIGHT: overlapping circles -->
-              <div
-                class="col-lg-6 wow fadeInRight"
-                data-wow-delay="0ms"
-                data-wow-duration="1500ms"
-              >
-                <div class="about_dk_circles">
-                  <span class="about_dk_star"
-                    ><iconify-icon icon="ph:star-four-fill"></iconify-icon
-                  ></span>
-                  <div class="about_dk_circle circle-1">
-                    <div class="about_dk_circle_inner">
-                      <iconify-icon
-                        class="about_dk_circle_icon"
-                        icon="lucide:clapperboard"
-                      ></iconify-icon>
-                      <h4>Video Editing</h4>
-                      <p>
-                        Cinematic edits that tell stories, captivate audiences,
-                        and deliver real impact.
-                      </p>
-                      <a href="#services" class="about_dk_circle_arrow"
-                        ><iconify-icon icon="lucide:arrow-right"></iconify-icon
-                      ></a>
-                    </div>
-                  </div>
-                  <div class="about_dk_circle circle-2">
-                    <div class="about_dk_circle_inner">
-                      <iconify-icon
-                        class="about_dk_circle_icon"
-                        icon="lucide:pen-tool"
-                      ></iconify-icon>
-                      <h4>Visual Design</h4>
-                      <p>
-                        Bold, strategic designs that build brand identity and
-                        leave lasting impressions.
-                      </p>
-                      <a href="#services" class="about_dk_circle_arrow"
-                        ><iconify-icon icon="lucide:arrow-right"></iconify-icon
-                      ></a>
-                    </div>
-                  </div>
-                  <div class="about_dk_circle circle-3">
-                    <div class="about_dk_circle_inner">
-                      <iconify-icon
-                        class="about_dk_circle_icon"
-                        icon="lucide:spline"
-                      ></iconify-icon>
-                      <h4>Motion Graphics</h4>
-                      <p>
-                        Engaging motion that brings ideas to life and makes your
-                        brand stand out.
-                      </p>
-                      <a href="#services" class="about_dk_circle_arrow"
-                        ><iconify-icon icon="lucide:arrow-right"></iconify-icon
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- About Us Section End -->
-        <!-- Service Section Start -->
-        <section id="services" class="pdb-120">
-          <div class="section-title mrb-55 mrb-lg-60">
-            <div class="container">
-              <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 mrb-md-30">
-                  <div class="title-box anim-heading animation-style1">
-                    <h5 class="sub-title">( MY SERVICES )</h5>
-                    <h2 class="title wt-split-text anim-title">
-                      Where Story Meets Motion
-                    </h2>
-                  </div>
-                </div>
-                <div
-                  class="col-xl-6 col-lg-6 col-md-12 d-flex justify-content-start justify-content-start justify-content-lg-end"
-                >
-                  <div class="portivio-btn-block">
-                    <a
-                      class="portivio-btn portivio-btn-circle"
-                      href="#portfolio"
-                      ><i class="fas fa-arrow-up icon-up-right"></i
-                    ></a>
-                    <a
-                      class="portivio-btn portivio-btn-primary"
-                      href="#portfolio"
-                      >MY WORK</a
-                    >
-                    <a
-                      class="portivio-btn portivio-btn-circle"
-                      href="#portfolio"
-                      ><i class="fas fa-arrow-up icon-up-right"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section-content">
-            <div class="container">
-              <div class="services_list_style1">
-                <div class="service_item wow fadeInDown" data-wow-delay="0.2s">
-                  <div class="service_head">
-                    <span class="service_count">(01)</span>
-                    <h2 class="service_title">Video Editing</h2>
-                  </div>
-                  <div class="service_content">
-                    <div class="service_content_left">
-                      <img
-                        src="images/dkphoto/services/video-editing.png"
-                        alt="Video Editing"
-                      />
-                    </div>
-                    <div class="service_content_right">
-                      <h3>
-                        Great videos don't just capture attention — they create
-                        impact, build trust, and drive action.
-                      </h3>
-                      <p>
-                        From engaging social media content to cinematic brand
-                        films, I transform raw footage into compelling visual
-                        stories that connect with your audience and elevate your
-                        brand.
-                      </p>
-                      <div class="service_content_list">
-                        <ul class="list1">
-                          <li>Social Media Reels & Shorts</li>
-                          <li>YouTube Video Editing</li>
-                          <li>Corporate & Promotional Videos</li>
-                          <li>Motion Graphics & Animation</li>
-                        </ul>
-                        <ul class="list1">
-                          <li>Sound Design & Audio Enhancement</li>
-                          <li>Product & Brand Videos</li>
-                          <li>Podcast & Interview Editing</li>
-                        </ul>
-                      </div>
-                      <div class="portivio-btn-block">
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                        <a
-                          class="portivio-btn portivio-btn-primary"
-                          href="#contact"
-                          >Let's Create Something Extraordinary</a
-                        >
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="service_item wow fadeInUp" data-wow-delay="0.4s">
-                  <div class="service_head">
-                    <span class="service_count">(02)</span>
-                    <h2 class="service_title">Graphic Design</h2>
-                  </div>
-                  <div class="service_content">
-                    <div class="service_content_left">
-                      <img
-                        src="images/dkphoto/services/graphic-design.png"
-                        alt="Graphic Design"
-                      />
-                    </div>
-                    <div class="service_content_right">
-                      <h3>Great design isn't just seen — it's remembered.</h3>
-                      <p>
-                        I create visually compelling designs that communicate
-                        your message, strengthen your brand identity, and leave
-                        a lasting impression on your audience.
-                      </p>
-                      <div class="service_content_list">
-                        <ul class="list1">
-                          <li>Social Media Creatives</li>
-                          <li>Marketing & Advertising Designs</li>
-                          <li>Brochure & Catalogue Design</li>
-                          <li>Packaging Design</li>
-                        </ul>
-                        <ul class="list1">
-                          <li>Business Branding Materials</li>
-                          <li>Presentation Design</li>
-                          <li>Custom Creative Campaigns</li>
-                        </ul>
-                      </div>
-                      <div class="portivio-btn-block">
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                        <a
-                          class="portivio-btn portivio-btn-primary"
-                          href="#contact"
-                          >Build A Brand That Stands Out</a
-                        >
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="service_item wow fadeInUp" data-wow-delay="0.6s">
-                  <div class="service_head">
-                    <span class="service_count">(03)</span>
-                    <h2 class="service_title">Brand Identity ( Branding )</h2>
-                  </div>
-                  <div class="service_content">
-                    <div class="service_content_left">
-                      <img
-                        src="images/dkphoto/services/brand-identity.png"
-                        alt="Brand Identity"
-                      />
-                    </div>
-                    <div class="service_content_right">
-                      <h3>
-                        Your brand is more than a logo — it's how people
-                        remember you.
-                      </h3>
-                      <p>
-                        I help businesses create a strong and consistent visual
-                        identity that builds credibility, trust, and recognition
-                        across every platform.
-                      </p>
-                      <div class="service_content_list">
-                        <ul class="list1">
-                          <li>Logo Design</li>
-                          <li>Brand Strategy</li>
-                          <li>Visual Identity System</li>
-                          <li>Brand Assets Creation</li>
-                        </ul>
-                        <ul class="list1">
-                          <li>Brand Guidelines</li>
-                          <li>Typography & Color Systems</li>
-                          <li>Stationery Design</li>
-                          <li>Brand Refresh & Repositioning</li>
-                        </ul>
-                      </div>
-                      <div class="portivio-btn-block">
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                        <a
-                          class="portivio-btn portivio-btn-primary"
-                          href="#contact"
-                          >Let's Build Your Brand Legacy</a
-                        >
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="service_item wow fadeInUp" data-wow-delay="0.8s">
-                  <div class="service_head">
-                    <span class="service_count">(04)</span>
-                    <h2 class="service_title">Motion Graphics</h2>
-                  </div>
-                  <div class="service_content">
-                    <div class="service_content_left">
-                      <img
-                        src="images/dkphoto/services/motion-graphics.png"
-                        alt="Motion Graphics"
-                      />
-                    </div>
-                    <div class="service_content_right">
-                      <h3>
-                        Motion turns ordinary content into unforgettable
-                        experiences.
-                      </h3>
-                      <p>
-                        Through dynamic animations and visual storytelling, I
-                        create engaging content that captures attention and
-                        keeps audiences connected.
-                      </p>
-                      <div class="service_content_list">
-                        <ul class="list1">
-                          <li>Logo Animation</li>
-                          <li>Explainer Videos</li>
-                          <li>Animated Social Media Ads</li>
-                          <li>Promotional Motion Graphics</li>
-                        </ul>
-                        <ul class="list1">
-                          <li>Kinetic Typography</li>
-                          <li>Product Animations</li>
-                          <li>Intro & Outro Sequences</li>
-                          <li>Visual Effects (VFX)</li>
-                        </ul>
-                      </div>
-                      <div class="portivio-btn-block">
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                        <a
-                          class="portivio-btn portivio-btn-primary"
-                          href="#contact"
-                          >Bring Your Ideas To Life</a
-                        >
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="service_item wow fadeInUp" data-wow-delay="1s">
-                  <div class="service_head">
-                    <span class="service_count">(05)</span>
-                    <h2 class="service_title">Social Media Management</h2>
-                  </div>
-                  <div class="service_content">
-                    <div class="service_content_left">
-                      <img
-                        src="images/dkphoto/services/social-media.png"
-                        alt="Social Media Management"
-                      />
-                    </div>
-                    <div class="service_content_right">
-                      <h3>
-                        Social media is more than posting content — it's about
-                        building relationships, trust, and a brand people
-                        remember.
-                      </h3>
-                      <p>
-                        I help businesses grow their online presence through
-                        strategic content planning, creative designs, engaging
-                        videos, and consistent brand communication that turns
-                        followers into customers.
-                      </p>
-                      <div class="service_content_list">
-                        <ul class="list1">
-                          <li>Social Media Strategy</li>
-                          <li>Content Planning & Calendar</li>
-                          <li>Instagram & Facebook Management</li>
-                          <li>Post & Reel Creation</li>
-                          <li>Graphic Design & Video Editing</li>
-                        </ul>
-                        <ul class="list1">
-                          <li>Caption Writing & Hashtag Research</li>
-                          <li>Community Engagement</li>
-                          <li>Performance Tracking & Insights</li>
-                          <li>Paid Campaign Creatives</li>
-                          <li>Brand Growth Strategy</li>
-                        </ul>
-                      </div>
-                      <div class="portivio-btn-block">
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                        <a
-                          class="portivio-btn portivio-btn-primary"
-                          href="#contact"
-                          >Grow Your Brand Beyond The Feed</a
-                        >
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="service_item wow fadeInUp" data-wow-delay="1.2s">
-                  <div class="service_head">
-                    <span class="service_count">(06)</span>
-                    <h2 class="service_title">Website Development</h2>
-                  </div>
-                  <div class="service_content">
-                    <div class="service_content_left">
-                      <img
-                        src="images/dkphoto/services/website-development.png"
-                        alt="Website Development"
-                      />
-                    </div>
-                    <div class="service_content_right">
-                      <h3>
-                        A website is more than a digital presence — it's your
-                        brand's first impression and most powerful sales tool.
-                      </h3>
-                      <p>
-                        I create modern, responsive, and high-performance
-                        websites that not only look premium but also help
-                        businesses attract customers, build trust, and drive
-                        growth.
-                      </p>
-                      <div class="service_content_list">
-                        <ul class="list1">
-                          <li>Business Website Development</li>
-                          <li>Portfolio Website Design</li>
-                          <li>Landing Page Development</li>
-                          <li>Corporate Website Solutions</li>
-                          <li>Responsive Mobile Design</li>
-                        </ul>
-                        <ul class="list1">
-                          <li>UI/UX Design</li>
-                          <li>Speed & Performance Optimization</li>
-                          <li>SEO-Friendly Structure</li>
-                          <li>Contact Forms & Lead Generation</li>
-                          <li>Website Maintenance & Support</li>
-                        </ul>
-                      </div>
-                      <div class="portivio-btn-block">
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                        <a
-                          class="portivio-btn portivio-btn-primary"
-                          href="#contact"
-                          >Build A Digital Presence That Drives Results</a
-                        >
-                        <a
-                          class="portivio-btn portivio-btn-circle"
-                          href="#contact"
-                          ><i class="fas fa-arrow-up icon-up-right"></i
-                        ></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Service Section End -->
-        <!-- Skill Section Start -->
-        <section id="skills" class="pdb-120">
-          <div class="section-title">
-            <div class="container">
-              <div class="row">
-                <div class="col"></div>
-                <div class="col-md-12 col-lg-10 col-xl-6">
-                  <div
-                    class="title-box-center text-center anim-heading animation-style1"
-                  >
-                    <h5 class="sub-title">( MY SKILLS )</h5>
-                    <h2 class="title anim-title">
-                      The Tools I Use to Bring Ideas to Life
-                    </h2>
-                  </div>
-                </div>
-                <div class="col"></div>
-              </div>
-            </div>
-          </div>
-          <div class="section-content">
-            <div class="container">
-              <div class="row">
-                <div
-                  class="col-md-6 col-lg-6 col-xl-3 d-flex justify-content-center justify-content-xl-start wow fadeInUp"
-                  data-wow-delay="0.5s"
-                >
-                  <div class="skill_style1 mrb-xl-30">
-                    <div class="skill_item">
-                      <div class="skill_icon">
-                        <iconify-icon
-                          icon="logos:adobe-after-effects"
-                        ></iconify-icon>
-                      </div>
-                      <h3 class="skill_count">
-                        <span class="counter">98</span>%
-                      </h3>
-                      <span class="skill_title">After Effects</span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="col-md-6 col-lg-6 col-xl-3 d-flex justify-content-center justify-content-xl-start wow fadeInUp"
-                  data-wow-delay="0.7s"
-                >
-                  <div class="skill_style1 mrb-xl-30">
-                    <div class="skill_item lg-size">
-                      <div class="skill_icon">
-                        <iconify-icon
-                          icon="logos:adobe-premiere"
-                        ></iconify-icon>
-                      </div>
-                      <h3 class="skill_count">
-                        <span class="counter">95</span>%
-                      </h3>
-                      <span class="skill_title">Premiere Pro</span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="col-md-6 col-lg-6 col-xl-3 d-flex justify-content-center justify-content-xl-start wow fadeInUp"
-                  data-wow-delay="0.9s"
-                >
-                  <div class="skill_style1 mrb-sm-30">
-                    <div class="skill_item md-size">
-                      <div class="skill_icon">
-                        <iconify-icon
-                          icon="logos:adobe-photoshop"
-                        ></iconify-icon>
-                      </div>
-                      <h3 class="skill_count">
-                        <span class="counter">92</span>%
-                      </h3>
-                      <span class="skill_title">Photoshop</span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="col-md-6 col-lg-6 col-xl-3 d-flex justify-content-center justify-content-xl-start wow fadeInUp"
-                  data-wow-delay="1.1s"
-                >
-                  <div class="skill_style1">
-                    <div class="skill_item xl-size">
-                      <div class="skill_icon">
-                        <iconify-icon
-                          icon="logos:adobe-illustrator"
-                        ></iconify-icon>
-                      </div>
-                      <h3 class="skill_count">
-                        <span class="counter">90</span>%
-                      </h3>
-                      <span class="skill_title">Illustrator</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Skill Section End -->
-        <!-- Expand Image Section Start -->
-        <section class="pdb-120 portivio-extend-animation text-center">
-          <div class="section-content">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-xl-12">
-                  <!-- Video badalne ke liye sirf data-video-url replace karo. Teeno chalenge:
-                     1) YouTube link  2) koi bhi direct .mp4 link  3) local file (jaise images/dkphoto/video.mp4) -->
-                  <div
-                    class="h1_extend_video"
-                    data-video-url="images/mainvideo.mp4"
-                  >
-                    <div class="h1_extend_video-frame"></div>
-                    <button
-                      type="button"
-                      class="video-toggle-btn"
-                      id="extendVideoBtn"
-                      aria-label="Play / pause video"
-                    >
-                      <iconify-icon icon="mdi:play"></iconify-icon>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Expand Image Section End -->
-        <!-- Project Section Start -->
-        <section id="portfolio" class="project_section_area pdb-120">
-          <div
-            class="section-title mrb-55 mrb-lg-60 wow fadeInUp"
-            data-wow-delay="0ms"
-            data-wow-duration="1500ms"
-          >
-            <div class="container">
-              <div class="row">
-                <div class="col"></div>
-                <div class="col-md-12 col-lg-10 col-xl-6">
-                  <div class="title-box-center pined_title_part text-center">
-                    <h5 class="sub-title">( Portfolio )</h5>
-                    <h2 class="title">
-                      Crafting Cinematic Stories for Brands & Screens
-                    </h2>
-                  </div>
-                </div>
-                <div class="col"></div>
-              </div>
-            </div>
-          </div>
-          <div class="section-content">
-            <div class="container">
-              <div class="row justify-content-between">
-                <div class="col-md-6 col-lg-3 col-xl-3">
-                  <div class="project_style1_item">
-                    <div
-                      class="project_thumb scale-img project_video_card"
-                      data-video-url="images/videos/chemitron-reel.mp4"
-                    ></div>
-                    <div class="project_content">
-                      <div class="project_title_area">
-                        <div class="project_category">
-                          <ul>
-                            <li><a href="#portfolio">Commercial</a></li>
-                          </ul>
-                        </div>
-                        <h4 class="title"><a href="#contact">Chemietron</a></h4>
-                      </div>
-                      <a class="project_link" href="#contact"
-                        ><i class="fas fa-arrow-up icon-up-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                  <div class="project_style1_item mrt-150 mrt-md-30">
-                    <div
-                      class="project_thumb scale-img project_video_card"
-                      data-video-url="images/videos/madhav-reel.mp4"
-                    ></div>
-                    <div class="project_content">
-                      <div class="project_title_area">
-                        <div class="project_category">
-                          <ul>
-                            <li><a href="#portfolio">Social</a></li>
-                            <li><a href="#portfolio">Reel</a></li>
-                          </ul>
-                        </div>
-                        <h4 class="title">
-                          <a href="#contact">Madhav Khakra</a>
-                        </h4>
-                      </div>
-                      <a class="project_link" href="#contact"
-                        ><i class="fas fa-arrow-up icon-up-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-3 col-xl-3">
-                  <div class="project_style1_item mrt-150 mrt-md-30">
-                    <div
-                      class="project_thumb scale-img project_video_card"
-                      data-video-url="images/videos/munshi-reel.mp4"
-                    ></div>
-                    <div class="project_content">
-                      <div class="project_title_area">
-                        <div class="project_category">
-                          <ul>
-                            <li><a href="#portfolio">Reel</a></li>
-                          </ul>
-                        </div>
-                        <h4 class="title"><a href="#contact">Munshi</a></h4>
-                      </div>
-                      <a class="project_link" href="#contact"
-                        ><i class="fas fa-arrow-up icon-up-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-3 col-xl-3">
-                  <div class="project_style1_item mrt-60 mrt-md-30">
-                    <div
-                      class="project_thumb scale-img project_video_card"
-                      data-video-url="images/videos/entartica-sea-world.mp4"
-                    ></div>
-                    <div class="project_content">
-                      <div class="project_title_area">
-                        <div class="project_category">
-                          <ul>
-                            <li><a href="#portfolio">Reel</a></li>
-                          </ul>
-                        </div>
-                        <h4 class="title">
-                          <a href="#contact">Entartica Sea World</a>
-                        </h4>
-                      </div>
-                      <a class="project_link" href="#contact"
-                        ><i class="fas fa-arrow-up icon-up-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                  <div class="project_style1_item mrt-150 mrt-md-30">
-                    <div
-                      class="project_thumb scale-img project_video_card"
-                      data-video-url="images/videos/RSON-airflow.mp4"
-                    ></div>
-                    <div class="project_content">
-                      <div class="project_title_area">
-                        <div class="project_category">
-                          <ul>
-                            <li><a href="#portfolio">Social</a></li>
-                          </ul>
-                        </div>
-                        <h4 class="title">
-                          <a href="#contact">Rson Airflow</a>
-                        </h4>
-                      </div>
-                      <a class="project_link" href="#contact"
-                        ><i class="fas fa-arrow-up icon-up-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-3 col-xl-3">
-                  <div class="project_style1_item mrt-200 mrt-md-30">
-                    <div
-                      class="project_thumb thumb-size scale-img project_video_card"
-                      data-video-url="images/videos/sairain-medicine.mp4"
-                    ></div>
-                    <div class="project_content">
-                      <div class="project_title_area">
-                        <div class="project_category">
-                          <ul>
-                            <li><a href="#portfolio">Commercial</a></li>
-                          </ul>
-                        </div>
-                        <h4 class="title">
-                          <a href="#contact">Sarian Medicine</a>
-                        </h4>
-                      </div>
-                      <a class="project_link" href="#contact"
-                        ><i class="fas fa-arrow-up icon-up-right"></i
-                      ></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row mrt-60">
-                <div
-                  class="col d-flex align-items-center justify-content-center"
-                >
-                  <div class="portivio-btn-block">
-                    <a class="portivio-btn portivio-btn-circle" href="#contact"
-                      ><i class="fas fa-arrow-up icon-up-right"></i
-                    ></a>
-                    <a class="portivio-btn portivio-btn-primary" href="#contact"
-                      >START A PROJECT</a
-                    >
-                    <a class="portivio-btn portivio-btn-circle" href="#contact"
-                      ><i class="fas fa-arrow-up icon-up-right"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Portfolio Section End -->
-        <!-- Marquee Section Start -->
-        <section class="bg-silver pdt-60 pdb-60">
-          <div class="marquee_slider_01">
-            <div class="marquee_slider_box">
-              <div class="scrolling-content">
-                <span><i class="fas fa-star"></i>Custom Branding</span>
-                <span><i class="fas fa-star"></i>Website Design</span>
-                <span><i class="fas fa-star"></i>Digital Marketing</span>
-                <span><i class="fas fa-star"></i>Strategy Consulting</span>
-                <span><i class="fas fa-star"></i>Analytics & Reporting</span>
-                <span><i class="fas fa-star"></i>Custom Branding</span>
-                <span><i class="fas fa-star"></i>Website Design</span>
-                <span><i class="fas fa-star"></i>Digital Marketing</span>
-                <span><i class="fas fa-star"></i>Strategy Consulting</span>
-                <span><i class="fas fa-star"></i>Analytics & Reporting</span>
-              </div>
-              <div class="scrolling-content">
-                <span><i class="fas fa-star"></i>Custom Branding</span>
-                <span><i class="fas fa-star"></i>Website Design</span>
-                <span><i class="fas fa-star"></i>Digital Marketing</span>
-                <span><i class="fas fa-star"></i>Strategy Consulting</span>
-                <span><i class="fas fa-star"></i>Analytics & Reporting</span>
-                <span><i class="fas fa-star"></i>Custom Branding</span>
-                <span><i class="fas fa-star"></i>Website Design</span>
-                <span><i class="fas fa-star"></i>Digital Marketing</span>
-                <span><i class="fas fa-star"></i>Strategy Consulting</span>
-                <span><i class="fas fa-star"></i>Analytics & Reporting</span>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Marquee Section End -->
-        <!-- Testimonials Section Start -->
-        <section id="testimonials" class="bg-silver pdt-120 pdb-120">
-          <div class="section-title mrb-55 mrb-lg-60">
-            <div class="container">
-              <div class="row">
-                <div class="col-xl-5 col-lg-5 col-md-12 mrb-md-30">
-                  <div class="title-box anim-heading animation-style1">
-                    <h5 class="sub-title">( TESTIMONIALS )</h5>
-                    <h2 class="title wt-split-text anim-title">
-                      What Our Clients Say About Me
-                    </h2>
-                  </div>
-                </div>
-                <div
-                  class="col-xl-7 col-lg-7 col-md-12 d-flex justify-content-start justify-content-start justify-content-lg-end"
-                >
-                  <div class="portivio-btn-block">
-                    <a class="portivio-btn portivio-btn-circle" href="#contact"
-                      ><i class="fas fa-arrow-up icon-up-right"></i
-                    ></a>
-                    <a class="portivio-btn portivio-btn-primary" href="#contact"
-                      >WORK WITH ME</a
-                    >
-                    <a class="portivio-btn portivio-btn-circle" href="#contact"
-                      ><i class="fas fa-arrow-up icon-up-right"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section-content">
-            <div class="container">
-              <div class="row">
-                <div class="col-xl-3">
-                  <div class="testimonial_01_quote_box mrb-xl-30">
-                    <div class="client_avatars">
-                      <img
-                        src="images/testimonials/jay.png"
-                        alt="Dr. Jay Bhavsar"
-                      />
-                      <img
-                        src="images/testimonials/meena.png"
-                        alt="Meena Gelot"
-                      />
-                      <img
-                        src="images/testimonials/hardik.png"
-                        alt="Hardik Dhokiya"
-                      />
-                      <img src="images/testimonials/ajay.png" alt="Mr. Ajay" />
-                    </div>
-                    <h5 class="rate">5/5</h5>
-                    <div class="ratings">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <p>Based on 200+ Reviews</p>
-                  </div>
-                </div>
-                <div class="col-xl-9 pos-rel">
-                  <div class="testimonial_01_carousel swiper">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">
-                        <div class="testimonial_01_item">
-                          <div class="testimonial_thumbnail">
-                            <img
-                              class="img-full"
-                              src="images/testimonials/jay.png"
-                              alt="Dr. Jay Bhavsar"
-                            />
-                          </div>
-                          <div class="testimonial_content">
-                            <p class="comments">
-                              "Very happy with the work done by Dhruvin, Founder
-                              of DK Studio. His graphic design, video editing,
-                              and social media management are professional,
-                              creative, and result-oriented. He understands
-                              client needs perfectly and delivers quality work
-                              on time. 100% satisfied. Highly recommended!"
-                            </p>
-                            <div class="testimonial-bottom-part">
-                              <h4 class="testimonial-title">Dr. Jay Bhavsar</h4>
-                              <span class="testimonial-subtitle"
-                                >Owner, Spiritual Awareness</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="testimonial_01_item">
-                          <div class="testimonial_thumbnail">
-                            <img
-                              class="img-full"
-                              src="images/testimonials/meena.png"
-                              alt="Meena Gelot"
-                            />
-                          </div>
-                          <div class="testimonial_content">
-                            <p class="comments">
-                              "Highly impressed with Dhruvin, Founder of DK
-                              Studio. His creative graphic designs, professional
-                              video editing, and social media management have
-                              helped us showcase our visa and overseas
-                              consultancy services to a wider audience. His
-                              dedication and timely delivery make him a valuable
-                              partner. 100% satisfied. Highly recommended!"
-                            </p>
-                            <div class="testimonial-bottom-part">
-                              <h4 class="testimonial-title">Meena Gelot</h4>
-                              <span class="testimonial-subtitle"
-                                >Manager, ATOM Overseas</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="testimonial_01_item">
-                          <div class="testimonial_thumbnail">
-                            <img
-                              class="img-full"
-                              src="images/testimonials/hardik.png"
-                              alt="Hardik Dhokiya"
-                            />
-                          </div>
-                          <div class="testimonial_content">
-                            <p class="comments">
-                              "Dhruvin, Founder of DK Studio, has played a key
-                              role in strengthening our brand presence. His
-                              exceptional graphic designs, engaging video
-                              editing, and strategic social media management
-                              present our visa and overseas services in a highly
-                              professional way. DK Studio doesn't just create
-                              content—they create results. 100% satisfied and
-                              highly recommended!"
-                            </p>
-                            <div class="testimonial-bottom-part">
-                              <h4 class="testimonial-title">Hardik Dhokiya</h4>
-                              <span class="testimonial-subtitle"
-                                >Senior Manager, ATOM Overseas</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="testimonial_01_item">
-                          <div class="testimonial_thumbnail">
-                            <img
-                              class="img-full"
-                              src="images/testimonials/ajay.png"
-                              alt="Mr. Ajay"
-                            />
-                          </div>
-                          <div class="testimonial_content">
-                            <p class="comments">
-                              "Extremely satisfied with the services provided by
-                              Dhruvin, Founder of DK Studio. His creative
-                              designs, professional video editing, and effective
-                              social media management have significantly
-                              enhanced our online presence and helped us
-                              showcase our visa consultation services more
-                              professionally. 100% satisfied with the results.
-                              Highly recommended!"
-                            </p>
-                            <div class="testimonial-bottom-part">
-                              <h4 class="testimonial-title">Mr. Ajay</h4>
-                              <span class="testimonial-subtitle"
-                                >Senior Manager, Wizdom International</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Navigation -->
-                  <div class="testimonial_01_nav">
-                    <div class="testimonial_01_pagination"></div>
-                    <div class="testimonial_01_button_prev"></div>
-                    <div class="testimonial_01_button_next"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Testimonials Section End -->
-        <!-- Footer Area Start -->
-        <footer id="contact" class="dk_footer">
-          <div class="container">
-            <div class="dk_footer_top">
-              <div class="dk_footer_brand wow fadeInUp" data-wow-delay="0s">
-                <a href="#home" class="dk_footer_logo" aria-label="DK Studio">
-                  <img src="images/dkphoto/logo-white.png" alt="DK Studio" />
-                </a>
-                <p class="dk_footer_tagline">
-                  Crafting brands through creative design, video editing &amp;
-                  social media — built to make your business stand out.
-                </p>
-                <ul class="dk_footer_social">
-                  <li>
-                    <a
-                      href="https://www.instagram.com/dk_creative_studio_"
-                      target="_blank"
-                      rel="noopener"
-                      aria-label="Instagram"
-                      ><iconify-icon icon="mdi:instagram"></iconify-icon
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/dhruvin-kachhiya-b8784941b"
-                      target="_blank"
-                      rel="noopener"
-                      aria-label="LinkedIn"
-                      ><iconify-icon icon="mdi:linkedin"></iconify-icon
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#" aria-label="Facebook"
-                      ><iconify-icon icon="mdi:facebook"></iconify-icon
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#" aria-label="Behance"
-                      ><iconify-icon icon="mdi:behance"></iconify-icon
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="dk_footer_col wow fadeInUp" data-wow-delay="0.15s">
-                <h5 class="dk_footer_heading">Services</h5>
-                <ul class="dk_footer_links">
-                  <li><a href="#services">Video Editing</a></li>
-                  <li><a href="#services">Graphic Design</a></li>
-                  <li><a href="#services">Brand Identity</a></li>
-                  <li><a href="#services">Social Media</a></li>
-                </ul>
-              </div>
-              <div class="dk_footer_col wow fadeInUp" data-wow-delay="0.3s">
-                <h5 class="dk_footer_heading">Company</h5>
-                <ul class="dk_footer_links">
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#portfolio">Portfolio</a></li>
-                  <li><a href="#testimonials">Testimonials</a></li>
-                </ul>
-                <p class="dk_footer_questions">Have a project in mind?</p>
-                <a href="contact.html" class="dk_footer_btn"
-                  >Let's work together
-                  <span class="dk_footer_btn_arrow">→</span></a
-                >
-              </div>
-            </div>
-            <div class="dk_footer_watermark wow fadeIn" data-wow-delay="0.2s">
-              DK Studio
-            </div>
-            <div class="dk_footer_bottom">
-              <span class="dk_footer_copy"
-                >Copyright © 2025 DK Creative Studio. All rights reserved</span
-              >
-            </div>
-          </div>
-        </footer>
-        <!-- Footer Area End -->
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
       </div>
     </div>
-    <!-- Mobile Nav Sidebar Content Start -->
-    <!-- Mobile Nav Sidebar Content Start -->
-    <div class="mobile-nav-wrapper">
-      <div class="mobile-nav-overlay mobile-nav-toggler"></div>
-      <div class="mobile-nav-content">
-        <a href="#" class="mobile-nav-close mobile-nav-toggler">
-          <span></span>
-          <span></span>
-        </a>
-        <div class="side-panel-logo logo-box">
-          <a href="#home" aria-label="logo image">
+  </section>
+  <!-- Preloader End -->
+  <!-- Preloader End -->
+  <!-- Header Area Start -->
+  <header class="header_style_01">
+    <nav class="main-menu sticky-header">
+      <div class="main-menu-wrapper">
+        <div class="main-menu-logo">
+          <a href="#home">
             <img src="images/dkphoto/logo.png" alt="DK Studio" />
           </a>
         </div>
-        <div class="mobile-nav-container"></div>
-        <ul class="list-items mobile-sidebar-contact">
-          <li>
+        <ul class="main-nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="main-menu-right">
+          <div class="portivio-btn-block">
+            <a class="portivio-btn portivio-btn-circle" href="contact.html"><i
+                class="fas fa-arrow-up icon-up-right"></i></a>
+            <a class="portivio-btn portivio-btn-primary" href="contact.html">Hire Me</a>
+            <a class="portivio-btn portivio-btn-circle" href="contact.html"><i
+                class="fas fa-arrow-up icon-up-right"></i></a>
+          </div>
+          <a href="#" class="mobile-nav-toggler">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Header Area End -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <!-- Home Banner Start -->
+      <section id="home" class="home_banner_01 pdt-200 pdb-lg-120 pdb-sm-0 bg-no-repeat bg-pos-cc">
+        <div class="container">
+          <div class="banner-item">
+            <div class="row align-items-center">
+              <div class="col-xl-12 anim-heading animation-style1">
+                <h1 class="h1-banner-title text-white f-weight-400 mrb-sm-20 wow fadeInLeft">
+                  <span class="h1-banner-emoji mrr-20">
+                    <svg viewBox="0 0 100 100" width="46" height="46" fill="var(--webex-primary-color)"
+                      aria-hidden="true">
+                      <g>
+                        <path d="M50,50 Q47,28 50,4 Q53,28 50,50 Z" />
+                        <path d="M50,50 Q47,28 50,4 Q53,28 50,50 Z" transform="rotate(45 50 50)" />
+                        <path d="M50,50 Q47,28 50,4 Q53,28 50,50 Z" transform="rotate(90 50 50)" />
+                        <path d="M50,50 Q47,28 50,4 Q53,28 50,50 Z" transform="rotate(135 50 50)" />
+                        <path d="M50,50 Q47,28 50,4 Q53,28 50,50 Z" transform="rotate(180 50 50)" />
+                        <path d="M50,50 Q47,28 50,4 Q53,28 50,50 Z" transform="rotate(225 50 50)" />
+                        <path d="M50,50 Q47,28 50,4 Q53,28 50,50 Z" transform="rotate(270 50 50)" />
+                        <path d="M50,50 Q47,28 50,4 Q53,28 50,50 Z" transform="rotate(315 50 50)" />
+                      </g>
+                    </svg>
+                  </span>
+                  Creative Minds
+                </h1>
+                <h1
+                  class="h1-banner-title text-white f-weight-400 d-block d-xl-none d-lg-none d-md-none wow fadeInRight">
+                  Powerful Results
+                </h1>
+              </div>
+              <div class="col-xl-12 anim-heading animation-style1">
+                <h1
+                  class="h1-banner-title text-white f-weight-400 d-none d-xl-block d-lg-block d-md-block mrb-xxl-30 anim-title">
+                  Powerful
+                </h1>
+              </div>
+              <div class="col-xl-7">
+                <div class="banner-info">
+                  <div class="anim-heading animation-style1">
+                    <h1
+                      class="h1-banner-title text-white f-weight-400 d-none d-xl-block d-lg-block d-md-block anim-title">
+                      Results
+                    </h1>
+                  </div>
+                  <p class="h1-banner-text">
+                    Professional Graphic Design,<br />
+                    Video Editing Solutions <br />
+                    that help businesses grow,<br />
+                    build trust, and generate more customers.
+                  </p>
+                  <div class="portivio-btn-block-2">
+                    <a class="portivio-btn-2 portivio-btn-2-circle" href="#portfolio"><i
+                        class="fas fa-arrow-down"></i></a>
+                    <a class="portivio-btn-2 portivio-btn-2-primary" href="#portfolio">VIEW MY WORK</a>
+                    <a class="portivio-btn-2 portivio-btn-2-circle" href="#portfolio"><i
+                        class="fas fa-arrow-down"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5">
+                <div class="banner-thumb">
+                  <img class="d-block" src="images/bg/dhruvin.png" alt="Thumb" />
+                  <div class="story-box wow fadeInUp">
+                    <div class="quote-icon">
+                      <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="story-description">
+                      <h4 class="title">
+                        "Young Founder. Limitless Vision."
+                      </h4>
+                      <span class="name">Dhruvin Kachhiya</span>
+                    </div>
+                  </div>
+                  <div class="h1-obj1 wow fadeInRight">
+                    <svg viewBox="0 0 100 100" width="70" height="94" fill="var(--webex-primary-color)"
+                      aria-hidden="true">
+                      <path d="M62,2 C63,8 65,10 71,11 C65,12 63,14 62,20 C61,14 59,12 53,11 C59,10 61,8 62,2 Z" />
+                      <path d="M34,24 C36,36 40,40 52,42 C40,44 36,48 34,60 C32,48 28,44 16,42 C28,40 32,36 34,24 Z" />
+                      <path d="M76,32 C77,37 79,39 84,40 C79,41 77,43 76,48 C75,43 73,41 68,40 C73,39 75,37 76,32 Z" />
+                    </svg>
+                  </div>
+                  <!-- <div class="h1-obj2 wow zoomIn"><img src="images/objects/h1-banner-art3.png" alt="" /></div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Home Banner End -->
+      <!-- About Us Section Start -->
+      <section id="about" class="pdt-120 pdb-120 about_dk_section">
+        <div class="container">
+          <div class="row align-items-center gy-5">
+            <!-- LEFT -->
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+              <div class="about_dk_left">
+                <h5 class="sub-title">( About Us )</h5>
+                <h2 class="about_dk_heading">
+                  Creative Solutions
+                  <span class="about_dk_pill"><img src="images/about/h1-ab-img1.png" alt="" /></span>
+                  That Build Strong
+                  <span class="about_dk_accent">Brands &amp; Bigger</span>
+                  <span class="about_dk_pill"><img src="images/about/h1-ab-img2.png" alt="" /></span>
+                  <span class="about_dk_accent">Visions.</span>
+                </h2>
+                <p class="about_dk_intro">
+                  Hi, I'm Dhruvin — the creative mind behind
+                  <span class="about_dk_link">DK Creative Studio</span>.
+                </p>
+                <p>
+                  At just 24, I started this agency with a big vision — to
+                  help businesses grow through powerful design, impactful
+                  videos, and creative storytelling.
+                </p>
+                <p>
+                  With 4+ years of experience and the trust of global brands,
+                  I turn ideas into visuals that connect, engage, and convert.
+                </p>
+                <div class="about_dk_sign">Dhruvin</div>
+                <p class="about_dk_founder">
+                  Founder,
+                  <span class="about_dk_link">DK Creative Studio</span>
+                </p>
+
+                <div class="about_dk_stats">
+                  <div class="about_dk_stat">
+                    <iconify-icon icon="lucide:trophy"></iconify-icon>
+                    <h3><span class="counter">4</span>+</h3>
+                    <span>Years Experience</span>
+                  </div>
+                  <div class="about_dk_stat">
+                    <iconify-icon icon="lucide:image"></iconify-icon>
+                    <h3><span class="counter">500</span>+</h3>
+                    <span>Projects Completed</span>
+                  </div>
+                  <div class="about_dk_stat">
+                    <iconify-icon icon="lucide:smile"></iconify-icon>
+                    <h3><span class="counter">100</span>+</h3>
+                    <span>Happy Clients</span>
+                  </div>
+                  <div class="about_dk_stat">
+                    <iconify-icon icon="lucide:globe"></iconify-icon>
+                    <h3><span class="counter">10</span>+</h3>
+                    <span>Countries Served</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- RIGHT: overlapping circles -->
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+              <div class="about_dk_circles">
+                <span class="about_dk_star"><iconify-icon icon="ph:star-four-fill"></iconify-icon></span>
+                <div class="about_dk_circle circle-1">
+                  <div class="about_dk_circle_inner">
+                    <iconify-icon class="about_dk_circle_icon" icon="lucide:clapperboard"></iconify-icon>
+                    <h4>Video Editing</h4>
+                    <p>
+                      Cinematic edits that tell stories, captivate audiences,
+                      and deliver real impact.
+                    </p>
+                    <a href="#services" class="about_dk_circle_arrow"><iconify-icon
+                        icon="lucide:arrow-right"></iconify-icon></a>
+                  </div>
+                </div>
+                <div class="about_dk_circle circle-2">
+                  <div class="about_dk_circle_inner">
+                    <iconify-icon class="about_dk_circle_icon" icon="lucide:pen-tool"></iconify-icon>
+                    <h4>Visual Design</h4>
+                    <p>
+                      Bold, strategic designs that build brand identity and
+                      leave lasting impressions.
+                    </p>
+                    <a href="#services" class="about_dk_circle_arrow"><iconify-icon
+                        icon="lucide:arrow-right"></iconify-icon></a>
+                  </div>
+                </div>
+                <div class="about_dk_circle circle-3">
+                  <div class="about_dk_circle_inner">
+                    <iconify-icon class="about_dk_circle_icon" icon="lucide:spline"></iconify-icon>
+                    <h4>Motion Graphics</h4>
+                    <p>
+                      Engaging motion that brings ideas to life and makes your
+                      brand stand out.
+                    </p>
+                    <a href="#services" class="about_dk_circle_arrow"><iconify-icon
+                        icon="lucide:arrow-right"></iconify-icon></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Us Section End -->
+      <!-- Service Section Start -->
+      <section id="services" class="pdb-120">
+        <div class="section-title mrb-55 mrb-lg-60">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-6 col-lg-6 col-md-12 mrb-md-30">
+                <div class="title-box anim-heading animation-style1">
+                  <h5 class="sub-title">( MY SERVICES )</h5>
+                  <h2 class="title wt-split-text anim-title">
+                    Where Story Meets Motion
+                  </h2>
+                </div>
+              </div>
+              <div
+                class="col-xl-6 col-lg-6 col-md-12 d-flex justify-content-start justify-content-start justify-content-lg-end">
+                <div class="portivio-btn-block">
+                  <a class="portivio-btn portivio-btn-circle" href="#portfolio"><i
+                      class="fas fa-arrow-up icon-up-right"></i></a>
+                  <a class="portivio-btn portivio-btn-primary" href="#portfolio">MY WORK</a>
+                  <a class="portivio-btn portivio-btn-circle" href="#portfolio"><i
+                      class="fas fa-arrow-up icon-up-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="container">
+            <div class="services_list_style1">
+              <div class="service_item wow fadeInDown" data-wow-delay="0.2s">
+                <div class="service_head">
+                  <span class="service_count">(01)</span>
+                  <h2 class="service_title">Video Editing</h2>
+                </div>
+                <div class="service_content">
+                  <div class="service_content_left">
+                    <img src="images/dkphoto/services/video-editing.png" alt="Video Editing" />
+                  </div>
+                  <div class="service_content_right">
+                    <h3>
+                      Great videos don't just capture attention — they create
+                      impact, build trust, and drive action.
+                    </h3>
+                    <p>
+                      From engaging social media content to cinematic brand
+                      films, I transform raw footage into compelling visual
+                      stories that connect with your audience and elevate your
+                      brand.
+                    </p>
+                    <div class="service_content_list">
+                      <ul class="list1">
+                        <li>Social Media Reels & Shorts</li>
+                        <li>YouTube Video Editing</li>
+                        <li>Corporate & Promotional Videos</li>
+                        <li>Motion Graphics & Animation</li>
+                      </ul>
+                      <ul class="list1">
+                        <li>Sound Design & Audio Enhancement</li>
+                        <li>Product & Brand Videos</li>
+                        <li>Podcast & Interview Editing</li>
+                      </ul>
+                    </div>
+                    <div class="portivio-btn-block">
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                      <a class="portivio-btn portivio-btn-primary" href="#contact">Let's Create Something
+                        Extraordinary</a>
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service_item wow fadeInUp" data-wow-delay="0.4s">
+                <div class="service_head">
+                  <span class="service_count">(02)</span>
+                  <h2 class="service_title">Graphic Design</h2>
+                </div>
+                <div class="service_content">
+                  <div class="service_content_left">
+                    <img src="images/dkphoto/services/graphic-design.png" alt="Graphic Design" />
+                  </div>
+                  <div class="service_content_right">
+                    <h3>Great design isn't just seen — it's remembered.</h3>
+                    <p>
+                      I create visually compelling designs that communicate
+                      your message, strengthen your brand identity, and leave
+                      a lasting impression on your audience.
+                    </p>
+                    <div class="service_content_list">
+                      <ul class="list1">
+                        <li>Social Media Creatives</li>
+                        <li>Marketing & Advertising Designs</li>
+                        <li>Brochure & Catalogue Design</li>
+                        <li>Packaging Design</li>
+                      </ul>
+                      <ul class="list1">
+                        <li>Business Branding Materials</li>
+                        <li>Presentation Design</li>
+                        <li>Custom Creative Campaigns</li>
+                      </ul>
+                    </div>
+                    <div class="portivio-btn-block">
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                      <a class="portivio-btn portivio-btn-primary" href="#contact">Build A Brand That Stands Out</a>
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service_item wow fadeInUp" data-wow-delay="0.6s">
+                <div class="service_head">
+                  <span class="service_count">(03)</span>
+                  <h2 class="service_title">Brand Identity ( Branding )</h2>
+                </div>
+                <div class="service_content">
+                  <div class="service_content_left">
+                    <img src="images/dkphoto/services/brand-identity.png" alt="Brand Identity" />
+                  </div>
+                  <div class="service_content_right">
+                    <h3>
+                      Your brand is more than a logo — it's how people
+                      remember you.
+                    </h3>
+                    <p>
+                      I help businesses create a strong and consistent visual
+                      identity that builds credibility, trust, and recognition
+                      across every platform.
+                    </p>
+                    <div class="service_content_list">
+                      <ul class="list1">
+                        <li>Logo Design</li>
+                        <li>Brand Strategy</li>
+                        <li>Visual Identity System</li>
+                        <li>Brand Assets Creation</li>
+                      </ul>
+                      <ul class="list1">
+                        <li>Brand Guidelines</li>
+                        <li>Typography & Color Systems</li>
+                        <li>Stationery Design</li>
+                        <li>Brand Refresh & Repositioning</li>
+                      </ul>
+                    </div>
+                    <div class="portivio-btn-block">
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                      <a class="portivio-btn portivio-btn-primary" href="#contact">Let's Build Your Brand Legacy</a>
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service_item wow fadeInUp" data-wow-delay="0.8s">
+                <div class="service_head">
+                  <span class="service_count">(04)</span>
+                  <h2 class="service_title">Motion Graphics</h2>
+                </div>
+                <div class="service_content">
+                  <div class="service_content_left">
+                    <img src="images/dkphoto/services/motion-graphics.png" alt="Motion Graphics" />
+                  </div>
+                  <div class="service_content_right">
+                    <h3>
+                      Motion turns ordinary content into unforgettable
+                      experiences.
+                    </h3>
+                    <p>
+                      Through dynamic animations and visual storytelling, I
+                      create engaging content that captures attention and
+                      keeps audiences connected.
+                    </p>
+                    <div class="service_content_list">
+                      <ul class="list1">
+                        <li>Logo Animation</li>
+                        <li>Explainer Videos</li>
+                        <li>Animated Social Media Ads</li>
+                        <li>Promotional Motion Graphics</li>
+                      </ul>
+                      <ul class="list1">
+                        <li>Kinetic Typography</li>
+                        <li>Product Animations</li>
+                        <li>Intro & Outro Sequences</li>
+                        <li>Visual Effects (VFX)</li>
+                      </ul>
+                    </div>
+                    <div class="portivio-btn-block">
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                      <a class="portivio-btn portivio-btn-primary" href="#contact">Bring Your Ideas To Life</a>
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service_item wow fadeInUp" data-wow-delay="1s">
+                <div class="service_head">
+                  <span class="service_count">(05)</span>
+                  <h2 class="service_title">Social Media Management</h2>
+                </div>
+                <div class="service_content">
+                  <div class="service_content_left">
+                    <img src="images/dkphoto/services/social-media.png" alt="Social Media Management" />
+                  </div>
+                  <div class="service_content_right">
+                    <h3>
+                      Social media is more than posting content — it's about
+                      building relationships, trust, and a brand people
+                      remember.
+                    </h3>
+                    <p>
+                      I help businesses grow their online presence through
+                      strategic content planning, creative designs, engaging
+                      videos, and consistent brand communication that turns
+                      followers into customers.
+                    </p>
+                    <div class="service_content_list">
+                      <ul class="list1">
+                        <li>Social Media Strategy</li>
+                        <li>Content Planning & Calendar</li>
+                        <li>Instagram & Facebook Management</li>
+                        <li>Post & Reel Creation</li>
+                        <li>Graphic Design & Video Editing</li>
+                      </ul>
+                      <ul class="list1">
+                        <li>Caption Writing & Hashtag Research</li>
+                        <li>Community Engagement</li>
+                        <li>Performance Tracking & Insights</li>
+                        <li>Paid Campaign Creatives</li>
+                        <li>Brand Growth Strategy</li>
+                      </ul>
+                    </div>
+                    <div class="portivio-btn-block">
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                      <a class="portivio-btn portivio-btn-primary" href="#contact">Grow Your Brand Beyond The Feed</a>
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service_item wow fadeInUp" data-wow-delay="1.2s">
+                <div class="service_head">
+                  <span class="service_count">(06)</span>
+                  <h2 class="service_title">Website Development</h2>
+                </div>
+                <div class="service_content">
+                  <div class="service_content_left">
+                    <img src="images/dkphoto/services/website-development.png" alt="Website Development" />
+                  </div>
+                  <div class="service_content_right">
+                    <h3>
+                      A website is more than a digital presence — it's your
+                      brand's first impression and most powerful sales tool.
+                    </h3>
+                    <p>
+                      I create modern, responsive, and high-performance
+                      websites that not only look premium but also help
+                      businesses attract customers, build trust, and drive
+                      growth.
+                    </p>
+                    <div class="service_content_list">
+                      <ul class="list1">
+                        <li>Business Website Development</li>
+                        <li>Portfolio Website Design</li>
+                        <li>Landing Page Development</li>
+                        <li>Corporate Website Solutions</li>
+                        <li>Responsive Mobile Design</li>
+                      </ul>
+                      <ul class="list1">
+                        <li>UI/UX Design</li>
+                        <li>Speed & Performance Optimization</li>
+                        <li>SEO-Friendly Structure</li>
+                        <li>Contact Forms & Lead Generation</li>
+                        <li>Website Maintenance & Support</li>
+                      </ul>
+                    </div>
+                    <div class="portivio-btn-block">
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                      <a class="portivio-btn portivio-btn-primary" href="#contact">Build A Digital Presence That Drives
+                        Results</a>
+                      <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                          class="fas fa-arrow-up icon-up-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Service Section End -->
+      <!-- Skill Section Start -->
+      <section id="skills" class="pdb-120">
+        <div class="section-title">
+          <div class="container">
+            <div class="row">
+              <div class="col"></div>
+              <div class="col-md-12 col-lg-10 col-xl-6">
+                <div class="title-box-center text-center anim-heading animation-style1">
+                  <h5 class="sub-title">( MY SKILLS )</h5>
+                  <h2 class="title anim-title">
+                    The Tools I Use to Bring Ideas to Life
+                  </h2>
+                </div>
+              </div>
+              <div class="col"></div>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="container">
+            <div class="row">
+              <div
+                class="col-md-6 col-lg-6 col-xl-3 d-flex justify-content-center justify-content-xl-start wow fadeInUp"
+                data-wow-delay="0.5s">
+                <div class="skill_style1 mrb-xl-30">
+                  <div class="skill_item">
+                    <div class="skill_icon">
+                      <iconify-icon icon="logos:adobe-after-effects"></iconify-icon>
+                    </div>
+                    <h3 class="skill_count">
+                      <span class="counter">98</span>%
+                    </h3>
+                    <span class="skill_title">After Effects</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-6 col-xl-3 d-flex justify-content-center justify-content-xl-start wow fadeInUp"
+                data-wow-delay="0.7s">
+                <div class="skill_style1 mrb-xl-30">
+                  <div class="skill_item lg-size">
+                    <div class="skill_icon">
+                      <iconify-icon icon="logos:adobe-premiere"></iconify-icon>
+                    </div>
+                    <h3 class="skill_count">
+                      <span class="counter">95</span>%
+                    </h3>
+                    <span class="skill_title">Premiere Pro</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-6 col-xl-3 d-flex justify-content-center justify-content-xl-start wow fadeInUp"
+                data-wow-delay="0.9s">
+                <div class="skill_style1 mrb-sm-30">
+                  <div class="skill_item md-size">
+                    <div class="skill_icon">
+                      <iconify-icon icon="logos:adobe-photoshop"></iconify-icon>
+                    </div>
+                    <h3 class="skill_count">
+                      <span class="counter">92</span>%
+                    </h3>
+                    <span class="skill_title">Photoshop</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-md-6 col-lg-6 col-xl-3 d-flex justify-content-center justify-content-xl-start wow fadeInUp"
+                data-wow-delay="1.1s">
+                <div class="skill_style1">
+                  <div class="skill_item xl-size">
+                    <div class="skill_icon">
+                      <iconify-icon icon="logos:adobe-illustrator"></iconify-icon>
+                    </div>
+                    <h3 class="skill_count">
+                      <span class="counter">90</span>%
+                    </h3>
+                    <span class="skill_title">Illustrator</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Skill Section End -->
+      <!-- Expand Image Section Start -->
+      <section class="pdb-120 portivio-extend-animation text-center">
+        <div class="section-content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-12">
+                <!-- Video badalne ke liye sirf data-video-url replace karo. Teeno chalenge:
+                     1) YouTube link  2) koi bhi direct .mp4 link  3) local file (jaise images/dkphoto/video.mp4) -->
+                <div class="h1_extend_video" data-video-url="images/mainvideo.mp4">
+                  <div class="h1_extend_video-frame"></div>
+                  <button type="button" class="video-toggle-btn" id="extendVideoBtn" aria-label="Play / pause video">
+                    <iconify-icon icon="mdi:play"></iconify-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Expand Image Section End -->
+      <!-- Project Section Start -->
+      <section id="portfolio" class="project_section_area pdb-120">
+        <div class="section-title mrb-55 mrb-lg-60 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+          <div class="container">
+            <div class="row">
+              <div class="col"></div>
+              <div class="col-md-12 col-lg-10 col-xl-6">
+                <div class="title-box-center pined_title_part text-center">
+                  <h5 class="sub-title">( Portfolio )</h5>
+                  <h2 class="title">
+                    Crafting Cinematic Stories for Brands & Screens
+                  </h2>
+                </div>
+              </div>
+              <div class="col"></div>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="container">
+            <div class="row justify-content-between">
+              <div class="col-md-6 col-lg-3 col-xl-3">
+                <div class="project_style1_item">
+                  <div class="project_thumb scale-img project_video_card"
+                    data-video-url="images/videos/chemitron-reel.mp4"></div>
+                  <div class="project_content">
+                    <div class="project_title_area">
+                      <div class="project_category">
+                        <ul>
+                          <li><a href="#portfolio">Commercial</a></li>
+                        </ul>
+                      </div>
+                      <h4 class="title"><a href="#contact">Chemietron</a></h4>
+                    </div>
+                    <a class="project_link" href="#contact"><i class="fas fa-arrow-up icon-up-right"></i></a>
+                  </div>
+                </div>
+                <div class="project_style1_item mrt-150 mrt-md-30">
+                  <div class="project_thumb scale-img project_video_card"
+                    data-video-url="images/videos/madhav-reel.mp4"></div>
+                  <div class="project_content">
+                    <div class="project_title_area">
+                      <div class="project_category">
+                        <ul>
+                          <li><a href="#portfolio">Social</a></li>
+                          <li><a href="#portfolio">Reel</a></li>
+                        </ul>
+                      </div>
+                      <h4 class="title">
+                        <a href="#contact">Madhav Khakra</a>
+                      </h4>
+                    </div>
+                    <a class="project_link" href="#contact"><i class="fas fa-arrow-up icon-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 col-xl-3">
+                <div class="project_style1_item mrt-150 mrt-md-30">
+                  <div class="project_thumb scale-img project_video_card"
+                    data-video-url="images/videos/munshi-reel.mp4"></div>
+                  <div class="project_content">
+                    <div class="project_title_area">
+                      <div class="project_category">
+                        <ul>
+                          <li><a href="#portfolio">Reel</a></li>
+                        </ul>
+                      </div>
+                      <h4 class="title"><a href="#contact">Munshi</a></h4>
+                    </div>
+                    <a class="project_link" href="#contact"><i class="fas fa-arrow-up icon-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 col-xl-3">
+                <div class="project_style1_item mrt-60 mrt-md-30">
+                  <div class="project_thumb scale-img project_video_card"
+                    data-video-url="images/videos/entartica-sea-world.mp4"></div>
+                  <div class="project_content">
+                    <div class="project_title_area">
+                      <div class="project_category">
+                        <ul>
+                          <li><a href="#portfolio">Reel</a></li>
+                        </ul>
+                      </div>
+                      <h4 class="title">
+                        <a href="#contact">Entartica Sea World</a>
+                      </h4>
+                    </div>
+                    <a class="project_link" href="#contact"><i class="fas fa-arrow-up icon-up-right"></i></a>
+                  </div>
+                </div>
+                <div class="project_style1_item mrt-150 mrt-md-30">
+                  <div class="project_thumb scale-img project_video_card"
+                    data-video-url="images/videos/RSON-airflow.mp4"></div>
+                  <div class="project_content">
+                    <div class="project_title_area">
+                      <div class="project_category">
+                        <ul>
+                          <li><a href="#portfolio">Social</a></li>
+                        </ul>
+                      </div>
+                      <h4 class="title">
+                        <a href="#contact">Rson Airflow</a>
+                      </h4>
+                    </div>
+                    <a class="project_link" href="#contact"><i class="fas fa-arrow-up icon-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3 col-xl-3">
+                <div class="project_style1_item mrt-200 mrt-md-30">
+                  <div class="project_thumb thumb-size scale-img project_video_card"
+                    data-video-url="images/videos/sairain-medicine.mp4"></div>
+                  <div class="project_content">
+                    <div class="project_title_area">
+                      <div class="project_category">
+                        <ul>
+                          <li><a href="#portfolio">Commercial</a></li>
+                        </ul>
+                      </div>
+                      <h4 class="title">
+                        <a href="#contact">Sarian Medicine</a>
+                      </h4>
+                    </div>
+                    <a class="project_link" href="#contact"><i class="fas fa-arrow-up icon-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mrt-60">
+              <div class="col d-flex align-items-center justify-content-center">
+                <div class="portivio-btn-block">
+                  <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                      class="fas fa-arrow-up icon-up-right"></i></a>
+                  <a class="portivio-btn portivio-btn-primary" href="#contact">START A PROJECT</a>
+                  <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                      class="fas fa-arrow-up icon-up-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Portfolio Section End -->
+      <!-- Marquee Section Start -->
+      <section class="bg-silver pdt-60 pdb-60">
+        <div class="marquee_slider_01">
+          <div class="marquee_slider_box">
+            <div class="scrolling-content">
+              <span><i class="fas fa-star"></i>Custom Branding</span>
+              <span><i class="fas fa-star"></i>Website Design</span>
+              <span><i class="fas fa-star"></i>Digital Marketing</span>
+              <span><i class="fas fa-star"></i>Strategy Consulting</span>
+              <span><i class="fas fa-star"></i>Analytics & Reporting</span>
+              <span><i class="fas fa-star"></i>Custom Branding</span>
+              <span><i class="fas fa-star"></i>Website Design</span>
+              <span><i class="fas fa-star"></i>Digital Marketing</span>
+              <span><i class="fas fa-star"></i>Strategy Consulting</span>
+              <span><i class="fas fa-star"></i>Analytics & Reporting</span>
+            </div>
+            <div class="scrolling-content">
+              <span><i class="fas fa-star"></i>Custom Branding</span>
+              <span><i class="fas fa-star"></i>Website Design</span>
+              <span><i class="fas fa-star"></i>Digital Marketing</span>
+              <span><i class="fas fa-star"></i>Strategy Consulting</span>
+              <span><i class="fas fa-star"></i>Analytics & Reporting</span>
+              <span><i class="fas fa-star"></i>Custom Branding</span>
+              <span><i class="fas fa-star"></i>Website Design</span>
+              <span><i class="fas fa-star"></i>Digital Marketing</span>
+              <span><i class="fas fa-star"></i>Strategy Consulting</span>
+              <span><i class="fas fa-star"></i>Analytics & Reporting</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Marquee Section End -->
+      <!-- Testimonials Section Start -->
+      <section id="testimonials" class="bg-silver pdt-120 pdb-120">
+        <div class="section-title mrb-55 mrb-lg-60">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-5 col-lg-5 col-md-12 mrb-md-30">
+                <div class="title-box anim-heading animation-style1">
+                  <h5 class="sub-title">( TESTIMONIALS )</h5>
+                  <h2 class="title wt-split-text anim-title">
+                    What Our Clients Say About Me
+                  </h2>
+                </div>
+              </div>
+              <div
+                class="col-xl-7 col-lg-7 col-md-12 d-flex justify-content-start justify-content-start justify-content-lg-end">
+                <div class="portivio-btn-block">
+                  <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                      class="fas fa-arrow-up icon-up-right"></i></a>
+                  <a class="portivio-btn portivio-btn-primary" href="#contact">WORK WITH ME</a>
+                  <a class="portivio-btn portivio-btn-circle" href="#contact"><i
+                      class="fas fa-arrow-up icon-up-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-3">
+                <div class="testimonial_01_quote_box mrb-xl-30">
+                  <div class="client_avatars">
+                    <img src="images/testimonials/jay.png" alt="Dr. Jay Bhavsar" />
+                    <img src="images/testimonials/meena.png" alt="Meena Gelot" />
+                    <img src="images/testimonials/hardik.png" alt="Hardik Dhokiya" />
+                    <img src="images/testimonials/ajay.png" alt="Mr. Ajay" />
+                  </div>
+                  <h5 class="rate">5/5</h5>
+                  <div class="ratings">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>Based on 200+ Reviews</p>
+                </div>
+              </div>
+              <div class="col-xl-9 pos-rel">
+                <div class="testimonial_01_carousel swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="testimonial_01_item">
+                        <div class="testimonial_thumbnail">
+                          <img class="img-full" src="images/testimonials/jay.png" alt="Dr. Jay Bhavsar" />
+                        </div>
+                        <div class="testimonial_content">
+                          <p class="comments">
+                            "Very happy with the work done by Dhruvin, Founder
+                            of DK Studio. His graphic design, video editing,
+                            and social media management are professional,
+                            creative, and result-oriented. He understands
+                            client needs perfectly and delivers quality work
+                            on time. 100% satisfied. Highly recommended!"
+                          </p>
+                          <div class="testimonial-bottom-part">
+                            <h4 class="testimonial-title">Dr. Jay Bhavsar</h4>
+                            <span class="testimonial-subtitle">Owner, Spiritual Awareness</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="testimonial_01_item">
+                        <div class="testimonial_thumbnail">
+                          <img class="img-full" src="images/testimonials/meena.png" alt="Meena Gelot" />
+                        </div>
+                        <div class="testimonial_content">
+                          <p class="comments">
+                            "Highly impressed with Dhruvin, Founder of DK
+                            Studio. His creative graphic designs, professional
+                            video editing, and social media management have
+                            helped us showcase our visa and overseas
+                            consultancy services to a wider audience. His
+                            dedication and timely delivery make him a valuable
+                            partner. 100% satisfied. Highly recommended!"
+                          </p>
+                          <div class="testimonial-bottom-part">
+                            <h4 class="testimonial-title">Meena Gelot</h4>
+                            <span class="testimonial-subtitle">Manager, ATOM Overseas</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="testimonial_01_item">
+                        <div class="testimonial_thumbnail">
+                          <img class="img-full" src="images/testimonials/hardik.png" alt="Hardik Dhokiya" />
+                        </div>
+                        <div class="testimonial_content">
+                          <p class="comments">
+                            "Dhruvin, Founder of DK Studio, has played a key
+                            role in strengthening our brand presence. His
+                            exceptional graphic designs, engaging video
+                            editing, and strategic social media management
+                            present our visa and overseas services in a highly
+                            professional way. DK Studio doesn't just create
+                            content—they create results. 100% satisfied and
+                            highly recommended!"
+                          </p>
+                          <div class="testimonial-bottom-part">
+                            <h4 class="testimonial-title">Hardik Dhokiya</h4>
+                            <span class="testimonial-subtitle">Senior Manager, ATOM Overseas</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="testimonial_01_item">
+                        <div class="testimonial_thumbnail">
+                          <img class="img-full" src="images/testimonials/ajay.png" alt="Mr. Ajay" />
+                        </div>
+                        <div class="testimonial_content">
+                          <p class="comments">
+                            "Extremely satisfied with the services provided by
+                            Dhruvin, Founder of DK Studio. His creative
+                            designs, professional video editing, and effective
+                            social media management have significantly
+                            enhanced our online presence and helped us
+                            showcase our visa consultation services more
+                            professionally. 100% satisfied with the results.
+                            Highly recommended!"
+                          </p>
+                          <div class="testimonial-bottom-part">
+                            <h4 class="testimonial-title">Mr. Ajay</h4>
+                            <span class="testimonial-subtitle">Senior Manager, Wizdom International</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="testimonial_01_nav">
+                  <div class="testimonial_01_pagination"></div>
+                  <div class="testimonial_01_button_prev"></div>
+                  <div class="testimonial_01_button_next"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials Section End -->
+      <!-- Footer Area Start -->
+      <footer id="contact" class="dk_footer">
+        <div class="container">
+          <div class="dk_footer_top">
+            <div class="dk_footer_brand wow fadeInUp" data-wow-delay="0s">
+              <a href="#home" class="dk_footer_logo" aria-label="DK Studio">
+                <img src="images/dkphoto/logo-white.png" alt="DK Studio" />
+              </a>
+              <p class="dk_footer_tagline">
+                Crafting brands through creative design, video editing &amp;
+                social media — built to make your business stand out.
+              </p>
+              <ul class="dk_footer_social">
+                <li>
+                  <a href="https://www.instagram.com/dk_creative_studio_" target="_blank" rel="noopener"
+                    aria-label="Instagram"><iconify-icon icon="mdi:instagram"></iconify-icon></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/dhruvin-kachhiya-b8784941b" target="_blank" rel="noopener"
+                    aria-label="LinkedIn"><iconify-icon icon="mdi:linkedin"></iconify-icon></a>
+                </li>
+                <li>
+                  <a href="#" aria-label="Facebook"><iconify-icon icon="mdi:facebook"></iconify-icon></a>
+                </li>
+                <li>
+                  <a href="#" aria-label="Behance"><iconify-icon icon="mdi:behance"></iconify-icon></a>
+                </li>
+              </ul>
+            </div>
+            <div class="dk_footer_col wow fadeInUp" data-wow-delay="0.15s">
+              <h5 class="dk_footer_heading">Services</h5>
+              <ul class="dk_footer_links">
+                <li><a href="#services">Video Editing</a></li>
+                <li><a href="#services">Graphic Design</a></li>
+                <li><a href="#services">Brand Identity</a></li>
+                <li><a href="#services">Social Media</a></li>
+              </ul>
+            </div>
+            <div class="dk_footer_col wow fadeInUp" data-wow-delay="0.3s">
+              <h5 class="dk_footer_heading">Company</h5>
+              <ul class="dk_footer_links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+              </ul>
+              <p class="dk_footer_questions">Have a project in mind?</p>
+              <a href="contact.html" class="dk_footer_btn">Let's work together
+                <span class="dk_footer_btn_arrow">→</span></a>
+            </div>
+          </div>
+          <div class="dk_footer_watermark wow fadeIn" data-wow-delay="0.2s">
+            DK Studio
+          </div>
+          <div class="dk_footer_bottom">
+            <span class="dk_footer_copy">Copyright © 2025 DK Creative Studio. All rights reserved</span>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer Area End -->
+    </div>
+  </div>
+  <!-- Mobile Nav Sidebar Content Start -->
+  <!-- Mobile Nav Sidebar Content Start -->
+  <div class="mobile-nav-wrapper">
+    <div class="mobile-nav-overlay mobile-nav-toggler"></div>
+    <div class="mobile-nav-content">
+      <a href="#" class="mobile-nav-close mobile-nav-toggler">
+        <span></span>
+        <span></span>
+      </a>
+      <div class="side-panel-logo logo-box">
+        <a href="#home" aria-label="logo image">
+          <img src="images/dkphoto/logo.png" alt="DK Studio" />
+        </a>
+      </div>
+      <div class="mobile-nav-container"></div>
+      <ul class="list-items mobile-sidebar-contact">
+        <!-- <li>
             <span class="fa fa-map-marker-alt mrr-10 text-primary-color"></span
             >121 King Street, Australia
           </li>
@@ -2162,106 +1784,92 @@
                 >[email&#160;protected]</span
               ></a
             >
-          </li>
-          <li>
-            <span class="fas fa-phone-alt mrr-10 text-primary-color"></span
-            ><a href="tel:123456789">+12 345 666 789</a>
-          </li>
-        </ul>
-        <ul class="social-list list-primary-color">
-          <li>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/dk_creative_studio_"
-              target="_blank"
-              rel="noopener"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          </li>
-        </ul>
-      </div>
+          </li> -->
+        <li>
+          <span class="fas fa-phone-alt mrr-10 text-primary-color"></span><a href="tel:+919157638051">+91 91576
+            38051</a>
+        </li>
+      </ul>
+      <ul class="social-list list-primary-color">
+        <li>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/dk_creative_studio_" target="_blank" rel="noopener"><i
+              class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </li>
+      </ul>
     </div>
-    <!-- Mobile Nav Sidebar Content End -->
-    <!-- Mobile Nav Sidebar Content End -->
-    <!-- Header Search Popup Start -->
-    <!-- Header Search Popup Start -->
-    <div class="search-popup">
-      <div class="search-popup-overlay search-toggler"></div>
-      <div class="search-popup-content">
-        <form action="#">
-          <label for="search" class="sr-only">search here</label>
-          <input type="text" id="search" placeholder="Search Here..." />
-          <button type="submit" aria-label="search submit" class="thm-btn">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
+  </div>
+  <!-- Mobile Nav Sidebar Content End -->
+  <!-- Mobile Nav Sidebar Content End -->
+  <!-- Header Search Popup Start -->
+  <!-- Header Search Popup Start -->
+  <div class="search-popup">
+    <div class="search-popup-overlay search-toggler"></div>
+    <div class="search-popup-content">
+      <form action="#">
+        <label for="search" class="sr-only">search here</label>
+        <input type="text" id="search" placeholder="Search Here..." />
+        <button type="submit" aria-label="search submit" class="thm-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
     </div>
-    <!-- Header Search Popup End -->
-    <!-- Header Search Popup End -->
-    <!-- Back to Top Start -->
-    <!-- Back to Top Start -->
-    <div class="anim-scroll-to-top">
-      <svg
-        class="progress-circle svg-content"
-        width="100%"
-        height="100%"
-        viewBox="-1 -1 102 102"
-      >
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-      </svg>
-    </div>
-    <!-- Back to Top end -->
-    <!-- Back to Top end -->
-    <!-- Integrated important scripts here -->
-    <!-- Integrated important scripts here -->
-    <script
-      data-cfasync="false"
-      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-    ></script>
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.appear.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/swiper.min.js"></script>
-    <!-- Counter Up Animation Start -->
-    <script src="assets/js/jquery.waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <!-- Counter Up Animation End -->
-    <script src="assets/js/jquery.event.move.js"></script>
-    <!-- Gsap Animation Start -->
-    <script src="assets/js/gsap-plugins.js"></script>
-    <script src="assets/js/gsap-trigger.js"></script>
-    <script src="assets/js/title-animations.js"></script>
-    <!-- Gsap Animation End -->
-    <!-- Parallax Start -->
-    <script src="assets/js/ukiyo.min.js"></script>
-    <!-- Parallax Start -->
-    <!-- Image Distortion Effect Start -->
-    <script src="assets/js/three.js"></script>
-    <script src="assets/js/hover-effect.umd.js"></script>
-    <!-- Image Distortion Effect End -->
-    <script src="assets/js/tilt.jquery.min.js"></script>
-    <script src="assets/js/magnific-popup.min.js"></script>
-    <script src="assets/js/backtotop.js"></script>
-    <script src="assets/js/trigger.js"></script>
-    <!-- Smart video player (direct / local / YouTube) -->
-    <script src="assets/js/video-player.js"></script>
-    <script
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"
-      integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ=="
-      data-cf-beacon='{"version":"2024.11.0","token":"3c43912e38b744e48914a9e5ed2f900e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  </div>
+  <!-- Header Search Popup End -->
+  <!-- Header Search Popup End -->
+  <!-- Back to Top Start -->
+  <!-- Back to Top Start -->
+  <div class="anim-scroll-to-top">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+  <!-- Back to Top end -->
+  <!-- Back to Top end -->
+  <!-- Integrated important scripts here -->
+  <!-- Integrated important scripts here -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/jquery.nice-select.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.appear.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/swiper.min.js"></script>
+  <!-- Counter Up Animation Start -->
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="assets/js/jquery.counterup.min.js"></script>
+  <!-- Counter Up Animation End -->
+  <script src="assets/js/jquery.event.move.js"></script>
+  <!-- Gsap Animation Start -->
+  <script src="assets/js/gsap-plugins.js"></script>
+  <script src="assets/js/gsap-trigger.js"></script>
+  <script src="assets/js/title-animations.js"></script>
+  <!-- Gsap Animation End -->
+  <!-- Parallax Start -->
+  <script src="assets/js/ukiyo.min.js"></script>
+  <!-- Parallax Start -->
+  <!-- Image Distortion Effect Start -->
+  <script src="assets/js/three.js"></script>
+  <script src="assets/js/hover-effect.umd.js"></script>
+  <!-- Image Distortion Effect End -->
+  <script src="assets/js/tilt.jquery.min.js"></script>
+  <script src="assets/js/magnific-popup.min.js"></script>
+  <script src="assets/js/backtotop.js"></script>
+  <script src="assets/js/trigger.js"></script>
+  <!-- Smart video player (direct / local / YouTube) -->
+  <script src="assets/js/video-player.js"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"
+    integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ=="
+    data-cf-beacon='{"version":"2024.11.0","token":"3c43912e38b744e48914a9e5ed2f900e","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
