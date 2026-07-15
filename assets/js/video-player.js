@@ -136,7 +136,7 @@
         var iframe = document.createElement("iframe");
         iframe.className = "project_video";
         iframe.src = "https://www.youtube.com/embed/" + ytId +
-          "?autoplay=1&playsinline=1&rel=0&modestbranding=1";
+          "?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1";
         iframe.allow = "autoplay; encrypted-media; fullscreen";
         iframe.setAttribute("frameborder", "0");
         iframe.setAttribute("allowfullscreen", "");
@@ -153,4 +153,40 @@
       }
     });
   });
+})();
+
+
+/* =========================================================
+   Ek time pe sirf EK video
+   ---------------------------------------------------------
+   Koi bhi <video> play ho -> baaki sab <video> pause ho jaayein.
+   Saath hi YouTube iframes ko bhi pause karo (postMessage se).
+   ========================================================= */
+(function () {
+  function pauseOthers(current) {
+    // baaki sab HTML5 <video> pause karo (poster preview muted videos chhodo)
+    document.querySelectorAll("video").forEach(function (v) {
+      if (v !== current && !v.muted && !v.paused) v.pause();
+    });
+    // YouTube iframes ko pause command bhejo
+    document.querySelectorAll('iframe[src*="youtube.com/embed"]').forEach(function (f) {
+      try {
+        f.contentWindow.postMessage(
+          '{"event":"command","func":"pauseVideo","args":""}',
+          "*"
+        );
+      } catch (e) { /* cross-origin ho to ignore */ }
+    });
+  }
+
+  // capture phase -- har video ke play par trigger
+  document.addEventListener(
+    "play",
+    function (e) {
+      if (e.target && e.target.tagName === "VIDEO" && !e.target.muted) {
+        pauseOthers(e.target);
+      }
+    },
+    true
+  );
 })();
